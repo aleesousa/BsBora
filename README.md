@@ -84,7 +84,7 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 - Telas em **HTML + JavaScript simples**: perfil e preferências, lista de passeios em cartões e resumo do plano.
 - **Catálogo inicial** de passeios do DF (começando pequeno e crescendo até a meta de 30 a 50).
 - **Filtro por categoria** (ex.: cultura, natureza, gastronomia) e por região.
-- Etiquetas no catálogo: **adequado para crianças** e **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
+- No catálogo: a categoria **família / adequado para crianças** e a etiqueta **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
 - **Cálculo do orçamento** com regras determinísticas: total planejado e saldo restante.
 
 ### 🟡 Médio: deixa o protótipo completo (meta da entrega)
