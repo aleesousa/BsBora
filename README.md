@@ -150,13 +150,30 @@ A interação com o assistente será exclusivamente por texto. Entrada e saída 
 
 No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
 
-### Papéis dos agentes
+### Papéis dos agentes e arquitetura de especialidade
 
-- **Orquestrador:** divide as tarefas e consolida a resposta.
-- **Lazer:** recupera passeios e evidências de horários, preços e regras de visitação.
-- **Mobilidade:** consulta rotas e estima alternativas de deslocamento.
-- **Financeiro:** verifica o teto mensal, o saldo e o custo por pessoa.
-- **Planejador:** combina passeios nos dias livres e propõe substituições.
+O sistema é coordenado por um **Agente Principal (Orquestrador)** que recebe as preferências e restrições do usuário, distribui as tarefas para os agentes especialistas e sintetiza a resposta final personalizada.
+
+Para evitar sobrecarga de processamento (latência e excesso de ferramentas por agente) e manter a arquitetura simples, o projeto prevê **duas opções de especialização** para a integração dos dados de **Clima (API meteorológica)**, permitindo que a equipe teste e valide a melhor opção na prática:
+
+- **Opção 1 (Primária / Recomendada — Lazer + Clima):**
+  - **Lazer & Clima:** une a curadoria do catálogo (RAG via `pgvector`) à checagem de previsão do tempo (API meteorológica).
+    * *Por que testar primeiro:* A previsão é um critério de viabilidade do passeio. Se um local for ao ar livre e houver previsão de chuva na data, o próprio agente já sugere uma alternativa coberta, evitando idas e vindas de mensagens (*ping-pong*) com o Orquestrador.
+    * *Carga:* Permanece leve, pois o agente utiliza apenas duas ferramentas (*tools*): busca no catálogo e consulta à API de clima.
+  - **Mobilidade:** foca exclusivamente em rotas, distâncias, tempos de trajeto e custos de deslocamento (ônibus, carro, aplicativo).
+  - **Financeiro:** validação determinística de teto de gastos, custos por participante e saldo restante.
+  - **Planejador:** alocação dos passeios nos dias e turnos livres da agenda.
+
+- **Opção 2 (Contingência / Alternativa — Mobilidade + Clima):**
+  - **Mobilidade & Clima:** agrupa as consultas a serviços externos dinâmicos (API de mapas/rotas + API de previsão do tempo).
+    * *Quando adotar:* Se durante os testes a Opção 1 se mostrar pesada ou apresentar lentidão combinando RAG e clima no mesmo agente.
+    * *Ponto de atenção:* O agente de mobilidade apenas sinaliza o risco de chuva para o trajeto/local, cabendo ao Orquestrador solicitar outro passeio ao agente de Lazer caso necessário.
+  - **Lazer:** foca exclusivamente na recuperação vetorial (RAG) do catálogo de passeios.
+
+> **Conceitos técnicos da decisão:**
+> - **Carga do agente / Janela de contexto:** Quantidade de informações e regras que o modelo precisa processar de uma só vez. Quanto mais focado for o agente, mais rápida e precisa é a resposta.
+> - **Tool calling (Chamada de ferramentas):** Capacidade da IA de consultar fontes externas (como APIs de clima ou banco de dados). Limitar a 1 ou 2 ferramentas por agente evita confusão e respostas lentas.
+> - **Ping-pong de orquestração:** Troca excessiva de mensagens entre agentes para resolver um único conflito (ex.: clima rejeita parque → orquestrador recebe → pede novo passeio ao lazer).
 
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 

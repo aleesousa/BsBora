@@ -34,7 +34,9 @@ Esta é a lista de **fontes candidatas** para o catálogo e para os agentes. **N
 | Google Maps Platform | API paga | Rotas e tempo de deslocamento | A verificar custo |
 | ANP — levantamento de preços de combustíveis | Dados oficiais | Preço médio da gasolina no DF | A verificar |
 
-### Agente de Clima (etiqueta "ao ar livre")
+### Agente de Clima (API meteorológica)
+
+> **Nota de Arquitetura:** Conforme definido no [README](../README.md#papéis-dos-agentes-e-arquitetura-de-especialidade), o consumo destas fontes de clima pode ser acoplado ao **Agente de Lazer** (Opção 1 — viabilidade direta de passeios abertos/cobertos) ou ao **Agente de Mobilidade** (Opção 2 — condições externas e trajeto), dependendo dos testes práticos de carga e latência.
 
 | Fonte candidata | Tipo | O que pode fornecer | Situação |
 | --- | --- | --- | --- |
