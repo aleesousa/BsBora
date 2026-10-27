@@ -2,7 +2,7 @@
 
 **Seu rolê, seu tempo, seu bolso.**
 
-Proposta de sistema web para ajudar moradores de Brasília a planejar momentos de lazer a partir de seus interesses, dias livres e orçamento mensal. O BSBora combina sugestões personalizadas, calendário de passeios e comparação de custos de transporte para apoiar decisões informadas sobre o tempo livre.
+Proposta de sistema web para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer a partir de seus interesses, dias livres e orçamento mensal. O BSBora combina sugestões personalizadas, calendário de passeios e comparação de custos de transporte para apoiar decisões informadas sobre o tempo livre.
 
 Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado à Big Idea **Qualidade de Vida**, com execução planejada em sete semanas.
 
@@ -16,9 +16,9 @@ O foco atual é desenvolver um **sistema web responsivo**, acessível pelo naveg
 
 Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e controlar gastos pode dificultar o aproveitamento dos dias livres. O objetivo do BSBora é transformar essas informações em um plano mensal de lazer explicado, viável e compatível com o limite financeiro definido pelo usuário.
 
-**Pergunta norteadora:** como utilizar inteligência artificial para ajudar moradores de Brasília a planejar momentos de lazer personalizados, respeitando sua disponibilidade de tempo e suas limitações financeiras, de modo a favorecer o bem-estar e a qualidade de vida?
+**Pergunta norteadora:** como utilizar inteligência artificial para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer personalizados, respeitando sua disponibilidade de tempo e suas limitações financeiras, de modo a favorecer o bem-estar e a qualidade de vida?
 
-O público inicial são moradores de Brasília que buscam passeios de fim de semana, incluindo pessoas sozinhas, casais, famílias e grupos de amigos. O recorte geográfico dentro do Distrito Federal ainda será definido.
+O público inicial são moradores do Distrito Federal que buscam passeios de fim de semana, incluindo pessoas sozinhas, casais, famílias e grupos de amigos. A **cobertura inicial definida é todo o Distrito Federal**, abrangendo todas as suas Regiões Administrativas.
 
 ## Funcionalidades planejadas
 
@@ -26,7 +26,7 @@ O público inicial são moradores de Brasília que buscam passeios de fim de sem
 | --- | --- |
 | Perfil e preferências | Interesses, região de partida aproximada, quantidade de participantes e teto mensal de lazer. Preferências opcionais de acessibilidade e duração máxima do deslocamento. |
 | Agenda mensal | Seleção de dias e períodos livres, com inclusão, edição, exclusão e substituição de passeios. |
-| Recomendações | Catálogo curado de Brasília, com sugestões compatíveis com o perfil, justificativas e fontes identificáveis. |
+| Recomendações | Catálogo curado de passeios no Distrito Federal, com sugestões compatíveis com o perfil, justificativas e fontes identificáveis. |
 | Transporte | Comparação de custos estimados de ida e volta por ônibus, carro e transporte por aplicativo, mostrando total e custo por pessoa. |
 | Orçamento | Cálculo dos gastos planejados e do saldo restante, com possibilidade de reserva para imprevistos e validação do teto mensal. |
 | Assistente de IA | Consulta por texto, explicação das sugestões e apresentação de alternativas. Entrada e saída por voz como evolução priorizada no cronograma. |
@@ -118,7 +118,6 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 
 ## Decisões em aberto
 
-- Definir a cobertura inicial: Plano Piloto, Regiões Administrativas selecionadas ou todo o DF.
 - Priorizar o perfil de usuário para entrevistas e validação.
 - Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação.
 - Definir as tecnologias do frontend web.
