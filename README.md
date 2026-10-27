@@ -2,15 +2,66 @@
 
 **Seu rolê, seu tempo, seu bolso.**
 
-Proposta de sistema web para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer a partir de seus interesses, dias livres e orçamento mensal. O BSBora combina sugestões personalizadas, calendário de passeios e comparação de custos de transporte para apoiar decisões informadas sobre o tempo livre.
+## O que é o BSBora, em poucas palavras
 
-Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado à Big Idea **Qualidade de Vida**, com execução planejada em sete semanas.
+O BSBora é um **site** que ajuda moradores do Distrito Federal a planejar os passeios do mês:
 
-## Status do projeto
+1. Você diz **do que gosta**, **quais dias tem livres** e **quanto pode gastar**.
+2. O sistema **sugere passeios** e explica por que escolheu cada um.
+3. Ele mostra **quanto vai custar** (incluindo o transporte) e **quanto sobra** do seu orçamento.
 
-O projeto está em fase de definição e planejamento. Este repositório contém a documentação inicial; ainda não há sistema web ou API implementados. As funcionalidades, tecnologias e metas descritas abaixo são propostas sujeitas à validação da equipe, dos mentores e dos usuários. O nome e o slogan também são provisórios.
+Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado à Big Idea **Qualidade de Vida**.
 
-O foco atual é desenvolver um **sistema web responsivo**, acessível pelo navegador. O aplicativo mobile é uma ideia de evolução futura, a ser avaliada após o desenvolvimento e a validação da versão web.
+> **Status:** fase de definição e planejamento. Ainda não há código implementado. Tudo o que está descrito aqui é **proposta**, sujeita à validação da equipe, dos mentores e dos usuários. O nome e o slogan também são provisórios.
+
+**Foco:** o projeto será um **sistema web** (abre no navegador do computador ou do celular). O aplicativo mobile fica apenas como **plano de backup / evolução futura**.
+
+---
+
+## Sumário
+
+- [Equipe](#equipe)
+- [Glossário para iniciantes](#glossário-para-iniciantes)
+- [Problema e objetivo](#problema-e-objetivo)
+- [Protótipo em 1 mês](#protótipo-em-1-mês)
+- [Funcionalidades planejadas](#funcionalidades-planejadas)
+- [Fluxo de uso](#fluxo-de-uso)
+- [Arquitetura e tecnologias propostas](#arquitetura-e-tecnologias-propostas)
+- [Dados, estimativas e cuidados](#dados-estimativas-e-cuidados)
+- [Riscos e métricas](#riscos-e-métricas)
+- [Cronograma proposto](#cronograma-proposto)
+- [Evoluções futuras](#evoluções-futuras)
+- [Decisões em aberto](#decisões-em-aberto)
+- [Documentação](#documentação)
+
+---
+
+## Equipe
+
+| Papel | Pessoa |
+| --- | --- |
+| Cientista de dados | Eduarda |
+| MLOps | Breno |
+| Engenheira de software | Larissa |
+| A definir | Isabel |
+
+---
+
+## Glossário para iniciantes
+
+| Termo | O que significa |
+| --- | --- |
+| **MVP / protótipo** | A versão mais simples do sistema que já funciona e pode ser demonstrada. |
+| **Frontend** | A parte que o usuário vê e usa: telas, botões, formulários. |
+| **Backend / API** | A parte "por trás" que recebe os pedidos do site, faz cálculos e acessa o banco de dados. |
+| **Banco de dados** | Onde ficam guardadas as informações (usuários, passeios, planos). |
+| **Supabase** | Serviço pronto que oferece banco de dados (PostgreSQL) e login de usuários. |
+| **LLM** | Modelo de linguagem, a "IA que escreve texto" (ex.: Claude, GPT). |
+| **RAG** | Técnica em que a IA primeiro **busca informações em uma base confiável** (o catálogo de passeios) e só depois responde. Reduz respostas inventadas. |
+| **Agentes** | Partes da IA com tarefas específicas (ex.: um cuida do orçamento, outro do transporte) que trabalham juntas. |
+| **Regras determinísticas** | Cálculos feitos por código comum (somas, limites, datas), sem IA, para garantir que o resultado está sempre certo. |
+
+---
 
 ## Problema e objetivo
 
@@ -18,7 +69,39 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 
 **Pergunta norteadora:** como utilizar inteligência artificial para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer personalizados, respeitando sua disponibilidade de tempo e suas limitações financeiras, de modo a favorecer o bem-estar e a qualidade de vida?
 
-O público inicial são moradores do Distrito Federal que buscam passeios de fim de semana, incluindo pessoas sozinhas, casais, famílias e grupos de amigos. A **cobertura inicial definida é todo o Distrito Federal**, abrangendo todas as suas Regiões Administrativas.
+**Público:** moradores do Distrito Federal que buscam passeios de fim de semana, incluindo pessoas sozinhas, casais, famílias e grupos de amigos.
+
+**Cobertura:** **todo o Distrito Federal**, abrangendo todas as suas Regiões Administrativas.
+
+---
+
+## Protótipo em 1 mês
+
+Como temos cerca de **um mês** para entregar, a construção segue do **mais fácil para o mais difícil**. A ideia é ter algo funcionando cedo e ir melhorando. Esta divisão é uma proposta e deve ser validada pela equipe.
+
+### 🟢 Fácil: base do protótipo (entra com certeza)
+
+- Telas em **HTML + JavaScript simples**: perfil e preferências, lista de passeios em cartões e resumo do plano.
+- **Catálogo inicial** de passeios do DF (começando pequeno e crescendo até a meta de 30 a 50).
+- **Filtro por categoria** (ex.: cultura, natureza, gastronomia) e por região.
+- **Cálculo do orçamento** com regras determinísticas: total planejado e saldo restante.
+
+### 🟡 Médio: deixa o protótipo completo (meta da entrega)
+
+- **Login e banco de dados com Supabase:** o usuário entra, e suas escolhas ficam salvas e passam a filtrar as categorias sugeridas.
+- **Agenda simples** para marcar dias e períodos livres.
+- **Estimativa de transporte** por fórmula simples (ex.: carro = distância × consumo × combustível; ônibus = tarifa), com aviso de "estimativa".
+- **API em Python + FastAPI** ligando as telas ao banco de dados.
+
+### 🔴 Difícil: se der tempo (ou versão mínima)
+
+- **Assistente de IA com RAG**, explicando as sugestões com base no catálogo.
+- **Orquestração de vários agentes** (orquestrador, lazer, mobilidade, financeiro, planejador).
+- Integração com serviços de **mapas e rotas**.
+
+> **Fica para depois:** aplicativo mobile, filtros de **clima** e de passeios **para crianças** (decisão futura, a ser feita como filtro de categoria por evento) e as demais [evoluções futuras](#evoluções-futuras).
+
+---
 
 ## Funcionalidades planejadas
 
@@ -36,6 +119,8 @@ A meta inicial sugerida para o catálogo é de **30 a 50 passeios**, condicionad
 
 A interação com o assistente será exclusivamente por texto. Entrada e saída por voz estão fora do escopo do projeto.
 
+---
+
 ## Fluxo de uso
 
 1. Informar interesses, região de partida e número de participantes.
@@ -44,13 +129,21 @@ A interação com o assistente será exclusivamente por texto. Entrada e saída 
 4. Receber sugestões explicadas e comparar meios de transporte e custos.
 5. Aprovar ou substituir passeios e acompanhar o total planejado e o saldo disponível.
 
+---
+
 ## Arquitetura e tecnologias propostas
+
+```
+[ Site (HTML + JS) ]  →  [ API Python/FastAPI ]  →  [ Supabase: banco + login ]
+                                   ↓
+                     [ IA: LLM + RAG + agentes ]  →  [ Mapas / fontes de passeios ]
+```
 
 | Camada | Tecnologia e responsabilidade |
 | --- | --- |
-| Frontend web | Aplicação web responsiva com calendário e cartões de passeios; framework e tecnologias de interface ainda a definir. |
+| Frontend web | **HTML + JavaScript simples** no início, com possibilidade de evoluir para um framework se o projeto crescer. Telas responsivas com calendário e cartões de passeios. |
 | API e regras | **Python + FastAPI** para perfis, agenda, custos, validações e orquestração. |
-| Dados | **Supabase/PostgreSQL** para perfis, passeios e planos; **pgvector** para a recuperação vetorial do RAG. |
+| Dados | **Supabase/PostgreSQL** para login, perfis, passeios e planos; **pgvector** para a recuperação vetorial do RAG. |
 | Inteligência artificial | **LLM + RAG**, com recuperação de informações verificáveis e coordenação de agentes especializados. |
 | Serviços externos | Fontes de passeios e serviços de rotas/mapas, escolhidos conforme cobertura, licença, custo e disponibilidade. |
 
@@ -66,6 +159,8 @@ No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupe
 
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 
+---
+
 ## Dados, estimativas e cuidados
 
 - Priorizar fontes verificáveis, como portais oficiais de turismo e cultura do DF, páginas dos atrativos, dados abertos e operadores de transporte.
@@ -79,27 +174,16 @@ Somas, limites financeiros e validações de datas devem ser implementados com *
 
 O sistema pretende apoiar organização, autonomia e bem-estar percebido. Não há alegação de prevenção ou tratamento de burnout, nem benefício clínico comprovado.
 
-## Riscos e medidas de mitigação
+---
 
-Os riscos abaixo foram identificados no planejamento do sistema web. As medidas propostas deverão orientar a implementação e os testes; ainda não representam controles implementados ou resultados verificados.
+## Riscos e métricas
 
-| Risco | Possível impacto | Medidas propostas |
-| --- | --- | --- |
-| Informações desatualizadas | Recomendar locais fechados, eventos encerrados ou preços e horários incorretos. | Registrar fonte e data de verificação, definir uma rotina de atualização do catálogo e sinalizar informações não confirmadas. |
-| Custos subestimados | O gasto real ultrapassar o orçamento por despesas de transporte, alimentação, estacionamento ou cobrança por participante. | Explicitar os itens incluídos e não incluídos, apresentar faixas de estimativa e permitir reserva para imprevistos. |
-| Erros de orçamento e agenda | Somar valores incorretamente, duplicar despesas ou sugerir atividades em horários incompatíveis. | Implementar cálculos e validações com regras determinísticas e testes, considerando duração das atividades, deslocamentos e custos por pessoa. |
-| Informações inventadas pela IA | Apresentar preços, horários ou condições de acessibilidade sem evidências. | Usar RAG com fontes verificáveis, conferir afirmações factuais e responder que uma informação não pôde ser confirmada quando faltarem evidências. O RAG não elimina esse risco. |
-| Cobertura desigual do Distrito Federal | Concentrar sugestões no Plano Piloto e atender de forma insuficiente moradores de outras Regiões Administrativas. | Medir a distribuição do catálogo e a disponibilidade de recomendações por região, incluindo opções gratuitas e deslocamentos viáveis. |
-| Exposição de dados pessoais | Revelar localização, rotina, agenda ou orçamento dos usuários. | Coletar o mínimo necessário, usar localização aproximada, restringir acessos aos dados e definir regras de retenção e exclusão. |
-| Manipulação dos agentes por conteúdo externo | Instruções maliciosas em páginas ou documentos recuperados alterarem o comportamento da IA, caracterizando um ataque de prompt injection. | Tratar conteúdo externo como dados, limitar as permissões dos agentes e validar suas saídas antes da execução de ações. |
-| Dependência e custo de serviços externos | Falhas, limites de uso ou cobranças de serviços de mapas e IA prejudicarem a disponibilidade e a viabilidade do sistema. | Definir limites de consumo, monitorar custos e permitir funcionamento parcial quando uma integração estiver indisponível, informando as limitações ao usuário. |
-| Escopo excessivo em sete semanas | Calendário, RAG, agentes e transporte ficarem incompletos ou pouco testados. | Priorizar um fluxo web completo e simples, integrar desde o início e ampliar funcionalidades conforme os resultados. |
-| Baixa utilidade e dificuldade de uso | Sugestões repetitivas, pouco relevantes ou uma configuração trabalhosa reduzirem a adoção. | Testar cedo com moradores de diferentes regiões e medir relevância, tempo de planejamento e conclusão de tarefas sem ajuda. |
-| Condições climáticas desfavoráveis | Chuva ou outras condições tornarem um passeio ao ar livre inadequado. | Identificar atividades ao ar livre e orientar a conferência das condições perto da data, sem prometer clima favorável. Quando houver integração meteorológica, informar local, atualização e incerteza da previsão e oferecer alternativas. |
+Para manter este README curto, os detalhes estão em arquivos separados:
 
-A prioridade inicial é garantir dados confiáveis, cálculos corretos e um fluxo web completo. A meta de 30 a 50 passeios deverá ser validada considerando a cobertura de todo o DF. A integração meteorológica permanece como evolução futura.
+- **[Riscos e medidas de mitigação](documentos/riscos.md):** 11 riscos mapeados (informações desatualizadas, custos subestimados, IA inventando dados, privacidade, escopo excessivo, entre outros), cada um com seu impacto e as medidas propostas.
+- **[Métricas e avaliação planejada](documentos/metricas.md):** metas como 100% de respeito ao orçamento e aos dias livres, ≥ 95% de afirmações com fonte e satisfação média ≥ 4/5.
 
-Referências de apoio: [guia de segurança da informação da ANPD](https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-publica-guia-de-seguranca-para-agentes-de-tratamento-de-pequeno-porte), para proteção de dados pessoais, e [orientações da OWASP sobre prompt injection](https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM01_PromptInjection.md), para riscos de manipulação da IA por conteúdo externo.
+---
 
 ## Cronograma proposto
 
@@ -115,24 +199,12 @@ Referências de apoio: [guia de segurança da informação da ANPD](https://www.
 
 A entrega planejada inclui **sistema web funcional**, backend acessível, repositório documentado e avaliação das recomendações.
 
-## Avaliação planejada
-
-As metas abaixo são hipóteses iniciais de aceitação e ainda precisam ser revisadas e medidas.
-
-| Indicador | Meta proposta | Forma de avaliação |
-| --- | --- | --- |
-| Respeito ao orçamento | 100% | Cenários automatizados com diferentes tetos. |
-| Respeito aos dias livres | 100% | Testes de datas, horários e conflitos. |
-| Afirmações sustentadas por fontes | ≥ 95% | Checagem de uma amostra anotada. |
-| Erro de estimativa de transporte | Mediana < 20%, quando houver referência | Comparação com rotas e preços observados. |
-| Satisfação | Média ≥ 4/5 | Questionário após tarefas de uso. |
-| Diversidade do plano | ≥ 3 categorias, quando viável | Análise dos passeios sugeridos no mês. |
-
-A comparação entre LLM e RAG deve usar o mesmo conjunto de perguntas e avaliar factualidade, suporte das respostas, omissões e respostas indevidas. Ainda não há resultados empíricos registrados.
+---
 
 ## Evoluções futuras
 
 - Aplicativo mobile para Android e iOS, após validação da versão web. React Native, Expo e TypeScript são possibilidades registradas no plano mobile, sem adoção definida para esta etapa.
+- Filtros de **clima** e de passeios **para crianças**, como filtro de categoria por evento (decisão futura).
 - Integração com Google Calendar, reservas de ingressos, previsão meteorológica e alertas automáticos.
 - Importação de despesas bancárias e histórico de preferências.
 - Leitura de cartazes e imagens de eventos, com confirmação das informações críticas.
@@ -140,19 +212,25 @@ A comparação entre LLM e RAG deve usar o mesmo conjunto de perguntas e avaliar
 
 Essas evoluções dependem de tempo, disponibilidade de dados e consentimento quando aplicável.
 
+---
+
 ## Decisões em aberto
 
 - Priorizar o perfil de usuário para entrevistas e validação.
-- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação.
-- Definir as tecnologias do frontend web.
+- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Parcialmente decidido:** papéis definidos na seção [Equipe](#equipe); falta definir o papel da Isabel.
+- ~~Definir as tecnologias do frontend web.~~ **Decidido:** HTML + JavaScript simples no início, com evolução possível.
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
 - Definir perguntas e cenários de teste desde a primeira semana.
 
+---
+
 ## Documentação
 
 - [Proposta preliminar — Challenge 2](documentos/BSBora_Proposta_Challenge_2.pdf): referência para o sistema web, com contexto, público, experiência de uso, arquitetura, riscos, métricas e pontos a validar.
-- [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): estudo de uma possível evolução futura para mobile; seu cronograma e suas entregas não representam o escopo atual.
+- [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): estudo de uma possível evolução futura (backup); seu cronograma e suas entregas não representam o escopo atual.
+- [Riscos e medidas de mitigação](documentos/riscos.md)
+- [Métricas e avaliação planejada](documentos/metricas.md)
 
 As referências a entrada e saída por voz nos PDFs fazem parte das propostas preliminares e foram descartadas do escopo atual.
 
