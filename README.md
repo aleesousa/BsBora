@@ -43,7 +43,7 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 | <img src="https://github.com/dudsstar16.png?size=80" width="56" height="56" alt="Foto de Eduarda" /> | **Eduarda** — Cientista de Dados | [@dudsstar16](https://github.com/dudsstar16) |
 | <img src="https://github.com/Br3n0G.png?size=80" width="56" height="56" alt="Foto de Breno" /> | **Breno** — MLOps | [@Br3n0G](https://github.com/Br3n0G) |
 | <img src="https://github.com/LarissaGiffoni.png?size=80" width="56" height="56" alt="Foto de Larissa" /> | **Larissa** — Engenheira de Software | [@LarissaGiffoni](https://github.com/LarissaGiffoni) |
-| <img src="https://github.com/aleesousa.png?size=80" width="56" height="56" alt="Foto de Alexandre Sousa" /> | **Alexandre Sousa** — Engenheiro de IA | [@aleesousa](https://github.com/aleesousa) |
+| <img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="56" height="56" alt="Foto de Alexandre Sousa" /> | **Alexandre Sousa** — Engenheiro de IA | [@aleesousa](https://github.com/aleesousa) |
 | 👤 | **Isabel** — Papel a definir | GitHub pendente |
 
 
