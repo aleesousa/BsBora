@@ -22,12 +22,12 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 | RF01 | Cadastro e login do usuário (Supabase). | Média |
 | RF02 | Perfil com interesses, região de partida aproximada, número de participantes e teto mensal de lazer. | Alta |
 | RF03 | Catálogo de passeios do DF com categoria, região, preço, horário, fonte e data de verificação. | Alta |
-| RF04 | Filtro por categoria e região, incluindo as etiquetas **adequado para crianças** e **ao ar livre / coberto**. | Alta |
+| RF04 | Filtro por categoria e região, incluindo a categoria de **família / adequado para crianças** e etiqueta **ao ar livre / coberto**. | Alta |
 | RF05 | Cálculo do total planejado e do saldo restante, com reserva opcional para imprevistos. | Alta |
 | RF06 | Agenda para marcar dias e períodos livres. | Média |
 | RF07 | Estimativa de custo de transporte (ônibus, carro e aplicativo), com aviso de que é estimativa. | Média |
 | RF08 | Assistente por texto que explica as sugestões com base no catálogo (RAG). | Média |
-| RF09 | Agentes especializados que leem dados de APIs (lazer, mobilidade, financeiro, planejador). | Média |
+| RF09 | 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando a um agente principal orquestrador. | Média |
 
 ## Requisitos não funcionais
 

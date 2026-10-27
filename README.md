@@ -97,8 +97,8 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 ### 🔴 Difícil: se der tempo (ou versão mínima)
 
 - **Assistente de IA com RAG**, explicando as sugestões com base no catálogo.
-- **Orquestração de vários agentes** (orquestrador, lazer, mobilidade, financeiro, planejador).
-- **Agentes lendo dados de APIs** (mapas e rotas, clima, fontes de passeios), cada agente com sua fonte.
+- **Orquestração de sistema multiagentes:** 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando para um agente principal orquestrador.
+- **Agentes lendo dados de APIs** (mapas e rotas, previsão de clima, fontes de passeios), cada agente com sua integração.
 
 > **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). Voz está fora do escopo.
 
@@ -150,13 +150,16 @@ A interação com o assistente será exclusivamente por texto. Entrada e saída 
 
 No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
 
-### Papéis dos agentes
+### Papéis dos agentes (Semana 5)
 
-- **Orquestrador:** divide as tarefas e consolida a resposta.
-- **Lazer:** recupera passeios e evidências de horários, preços e regras de visitação.
-- **Mobilidade:** consulta rotas e estima alternativas de deslocamento.
-- **Financeiro:** verifica o teto mensal, o saldo e o custo por pessoa.
-- **Planejador:** combina passeios nos dias livres e propõe substituições.
+O sistema conta com **5 agentes especializados que reportam para um agente principal**, responsável por gerar a resposta final personalizada ao usuário:
+
+- **Agente Principal (Orquestrador):** recebe as preferências e restrições do usuário, distribui as demandas para os especialistas, consolida os resultados e formula o roteiro final personalizado e justificado.
+- **Lazer e Eventos:** recupera passeios e eventos do catálogo curado (RAG com `pgvector`), validando categorias (incluindo rotinas para famílias com crianças), horários, preços e regras de visitação.
+- **Mobilidade:** consulta distâncias e rotas para estimar custos e opções de deslocamento (ônibus, carro, aplicativo).
+- **Clima:** consome uma **API de previsão do tempo** para checar as condições climáticas nas datas planejadas e avaliar a viabilidade de passeios abertos ou cobertos.
+- **Financeiro:** valida o cumprimento estrito do teto orçamentário mensal, custos por participante, reserva de imprevistos e saldo restante (regras determinísticas).
+- **Planejador:** aloca os passeios nos dias e turnos livres marcados na agenda mensal, propondo substituições viáveis.
 
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 
@@ -195,8 +198,8 @@ O cronograma segue o roadmap oficial do Challenge 2, com **7 semanas**. Cada sem
 | 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | [Documentos da Semana 1](documentos/semana-1/README.md) e wireframes. |
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Catálogo inicial no Supabase com pgvector e telas básicas. |
 | 3 | Comparação LLM x RAG | Respostas baseadas em evidências | Mesmo conjunto de perguntas para o LLM com e sem RAG. |
-| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Agentes de lazer, mobilidade, financeiro e planejador, com regras de agenda e orçamento. |
-| 5 | Multimodalidade | Agentes multimodais | Agentes lendo dados de várias APIs (mapas, clima, fontes de passeios). Sem voz; interpretação a validar com os mentores. |
+| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Estruturação inicial dos agentes e regras de negócio determinísticas. |
+| 5 | Multimodalidade / Multiagentes | Sistema multiagentes completo | 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando ao agente principal orquestrador. |
 | 6 | Integração completa | Aplicação funcional | Telas, API e IA no fluxo completo do sistema web. |
 | 7 | Testes e refinamento | Relatório final + apresentação | Testes de usabilidade, avaliação das métricas e apresentação. |
 
@@ -207,8 +210,9 @@ A entrega planejada inclui **sistema web funcional**, backend acessível, reposi
 ## Evoluções futuras
 
 - Aplicativo mobile para Android e iOS, após validação da versão web. React Native, Expo e TypeScript são possibilidades registradas no plano mobile, sem adoção definida para esta etapa.
-- Versão completa dos filtros de **clima** (previsão do tempo com troca automática de passeio) e de **crianças** (faixa etária e preço infantil).
-- Integração com Google Calendar, reservas de ingressos, previsão meteorológica e alertas automáticos.
+- Alertas em tempo real de mudança de tempo com sugestão de troca automática do passeio.
+- Filtros detalhados de faixa etária e preços específicos/gratuidade infantil por atrativo.
+- Integração com Google Calendar e reservas de ingressos.
 - Importação de despesas bancárias e histórico de preferências.
 - Leitura de cartazes e imagens de eventos, com confirmação das informações críticas.
 - Expansão para o Entorno e outras cidades.
