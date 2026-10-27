@@ -1,6 +1,6 @@
 # Métricas e avaliação planejada — BSBora
 
-[← Voltar ao README](../README.md)
+[← Voltar à Semana 1](README.md) · [README do projeto](../../README.md)
 
 As metas abaixo são hipóteses iniciais de aceitação e ainda precisam ser revisadas e medidas.
 

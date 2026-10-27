@@ -1,6 +1,6 @@
 # Riscos e medidas de mitigação — BSBora
 
-[← Voltar ao README](../README.md)
+[← Voltar à Semana 1](README.md) · [README do projeto](../../README.md)
 
 Os riscos abaixo foram identificados no planejamento do sistema web. As medidas propostas deverão orientar a implementação e os testes; ainda não representam controles implementados ou resultados verificados.
 

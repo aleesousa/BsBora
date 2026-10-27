@@ -23,13 +23,13 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 - [Equipe](#equipe)
 - [Glossário para iniciantes](#glossário-para-iniciantes)
 - [Problema e objetivo](#problema-e-objetivo)
-- [Protótipo em 1 mês](#protótipo-em-1-mês)
+- [Plano do protótipo](#plano-do-protótipo)
 - [Funcionalidades planejadas](#funcionalidades-planejadas)
 - [Fluxo de uso](#fluxo-de-uso)
 - [Arquitetura e tecnologias propostas](#arquitetura-e-tecnologias-propostas)
 - [Dados, estimativas e cuidados](#dados-estimativas-e-cuidados)
 - [Riscos e métricas](#riscos-e-métricas)
-- [Cronograma proposto](#cronograma-proposto)
+- [Cronograma (roadmap do Challenge)](#cronograma-roadmap-do-challenge)
 - [Evoluções futuras](#evoluções-futuras)
 - [Decisões em aberto](#decisões-em-aberto)
 - [Documentação](#documentação)
@@ -75,15 +75,16 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 
 ---
 
-## Protótipo em 1 mês
+## Plano do protótipo
 
-Como temos cerca de **um mês** para entregar, a construção segue do **mais fácil para o mais difícil**. A ideia é ter algo funcionando cedo e ir melhorando. Esta divisão é uma proposta e deve ser validada pela equipe.
+O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#cronograma-roadmap-do-challenge)). Dentro dele, a construção vai do **mais fácil para o mais difícil**. A ideia é ter algo funcionando cedo e ir melhorando. Esta divisão é uma proposta e deve ser validada pela equipe.
 
 ### 🟢 Fácil: base do protótipo (entra com certeza)
 
 - Telas em **HTML + JavaScript simples**: perfil e preferências, lista de passeios em cartões e resumo do plano.
 - **Catálogo inicial** de passeios do DF (começando pequeno e crescendo até a meta de 30 a 50).
 - **Filtro por categoria** (ex.: cultura, natureza, gastronomia) e por região.
+- Etiquetas no catálogo: **adequado para crianças** e **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
 - **Cálculo do orçamento** com regras determinísticas: total planejado e saldo restante.
 
 ### 🟡 Médio: deixa o protótipo completo (meta da entrega)
@@ -97,9 +98,9 @@ Como temos cerca de **um mês** para entregar, a construção segue do **mais f�
 
 - **Assistente de IA com RAG**, explicando as sugestões com base no catálogo.
 - **Orquestração de vários agentes** (orquestrador, lazer, mobilidade, financeiro, planejador).
-- Integração com serviços de **mapas e rotas**.
+- **Agentes lendo dados de APIs** (mapas e rotas, clima, fontes de passeios), cada agente com sua fonte.
 
-> **Fica para depois:** aplicativo mobile, filtros de **clima** e de passeios **para crianças** (decisão futura, a ser feita como filtro de categoria por evento) e as demais [evoluções futuras](#evoluções-futuras).
+> **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). Voz está fora do escopo.
 
 ---
 
@@ -180,22 +181,24 @@ O sistema pretende apoiar organização, autonomia e bem-estar percebido. Não h
 
 Para manter este README curto, os detalhes estão em arquivos separados:
 
-- **[Riscos e medidas de mitigação](documentos/riscos.md):** 11 riscos mapeados (informações desatualizadas, custos subestimados, IA inventando dados, privacidade, escopo excessivo, entre outros), cada um com seu impacto e as medidas propostas.
-- **[Métricas e avaliação planejada](documentos/metricas.md):** metas como 100% de respeito ao orçamento e aos dias livres, ≥ 95% de afirmações com fonte e satisfação média ≥ 4/5.
+- **[Riscos e medidas de mitigação](documentos/semana-1/3-riscos.md):** 11 riscos mapeados (informações desatualizadas, custos subestimados, IA inventando dados, privacidade, escopo excessivo, entre outros), cada um com seu impacto e as medidas propostas.
+- **[Métricas e avaliação planejada](documentos/semana-1/4-metricas.md):** metas como 100% de respeito ao orçamento e aos dias livres, ≥ 95% de afirmações com fonte e satisfação média ≥ 4/5.
 
 ---
 
-## Cronograma proposto
+## Cronograma (roadmap do Challenge)
 
-| Semana | Foco e entregas planejadas |
-| --- | --- |
-| 1 | Definição do problema, público, requisitos, riscos e métricas; wireframes e estrutura inicial da aplicação web. |
-| 2 | Telas básicas, banco de dados e catálogo inicial, com preparação da base de recuperação. |
-| 3 | Implementação do RAG e comparação controlada entre LLM sem recuperação e LLM com RAG. |
-| 4 | Orquestração dos agentes e validação das regras de agenda, orçamento e transporte. |
-| 5 | Refinamento do assistente por texto e testes das recomendações, explicações e respostas de incerteza. |
-| 6 | Integração das telas com a API e execução do fluxo completo no sistema web. |
-| 7 | Testes de usabilidade, ajustes, avaliação das métricas e apresentação do protótipo web. |
+O cronograma segue o roadmap oficial do Challenge 2, com **7 semanas**. Cada semana tem um entregável principal.
+
+| Semana | Foco (slide) | Entregável principal | No BSBora |
+| --- | --- | --- | --- |
+| 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | [Documentos da Semana 1](documentos/semana-1/README.md) e wireframes. |
+| 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Catálogo inicial no Supabase com pgvector e telas básicas. |
+| 3 | Comparação LLM x RAG | Respostas baseadas em evidências | Mesmo conjunto de perguntas para o LLM com e sem RAG. |
+| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Agentes de lazer, mobilidade, financeiro e planejador, com regras de agenda e orçamento. |
+| 5 | Multimodalidade | Agentes multimodais | Agentes lendo dados de várias APIs (mapas, clima, fontes de passeios). Sem voz; interpretação a validar com os mentores. |
+| 6 | Integração completa | Aplicação funcional | Telas, API e IA no fluxo completo do sistema web. |
+| 7 | Testes e refinamento | Relatório final + apresentação | Testes de usabilidade, avaliação das métricas e apresentação. |
 
 A entrega planejada inclui **sistema web funcional**, backend acessível, repositório documentado e avaliação das recomendações.
 
@@ -204,7 +207,7 @@ A entrega planejada inclui **sistema web funcional**, backend acessível, reposi
 ## Evoluções futuras
 
 - Aplicativo mobile para Android e iOS, após validação da versão web. React Native, Expo e TypeScript são possibilidades registradas no plano mobile, sem adoção definida para esta etapa.
-- Filtros de **clima** e de passeios **para crianças**, como filtro de categoria por evento (decisão futura).
+- Versão completa dos filtros de **clima** (previsão do tempo com troca automática de passeio) e de **crianças** (faixa etária e preço infantil).
 - Integração com Google Calendar, reservas de ingressos, previsão meteorológica e alertas automáticos.
 - Importação de despesas bancárias e histórico de preferências.
 - Leitura de cartazes e imagens de eventos, com confirmação das informações críticas.
@@ -222,6 +225,8 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
 - Definir perguntas e cenários de teste desde a primeira semana.
+- Definir as APIs de cada agente (mapas e rotas, clima, fontes de passeios).
+- Validar com os mentores a interpretação da multimodalidade (Semana 5) sem voz.
 
 ---
 
@@ -229,8 +234,9 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 
 - [Proposta preliminar — Challenge 2](documentos/BSBora_Proposta_Challenge_2.pdf): referência para o sistema web, com contexto, público, experiência de uso, arquitetura, riscos, métricas e pontos a validar.
 - [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): estudo de uma possível evolução futura (backup); seu cronograma e suas entregas não representam o escopo atual.
-- [Riscos e medidas de mitigação](documentos/riscos.md)
-- [Métricas e avaliação planejada](documentos/metricas.md)
+- [Semana 1 — Definições do projeto](documentos/semana-1/README.md): problema, requisitos, stakeholders, riscos e métricas.
+- [Riscos e medidas de mitigação](documentos/semana-1/3-riscos.md)
+- [Métricas e avaliação planejada](documentos/semana-1/4-metricas.md)
 
 As referências a entrada e saída por voz nos PDFs fazem parte das propostas preliminares e foram descartadas do escopo atual.
 
