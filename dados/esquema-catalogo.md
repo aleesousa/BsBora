@@ -39,7 +39,6 @@ Este documento define **quais informações cada passeio do catálogo deve ter**
 
 | Campo | Tipo | Obrigatório | Descrição |
 | --- | --- | --- | --- |
-| `adequado_criancas` | sim / não / não informado | sim | Se o passeio é adequado para famílias com crianças. |
 | `ambiente` | ao ar livre / coberto / misto | sim | Usado para lembrar o usuário de conferir o clima. |
 | `acessibilidade` | texto | não | Informações de acessibilidade confirmadas na fonte. |
 
@@ -58,7 +57,9 @@ Este documento define **quais informações cada passeio do catálogo deve ter**
 
 Lista inicial (a validar com a equipe):
 
-`cultura` · `natureza` · `gastronomia` · `esporte` · `lazer infantil` · `vida noturna` · `eventos` · `compras` · `religioso` · `histórico`
+`cultura` · `natureza` · `gastronomia` · `esporte` · `familia` · `vida noturna` · `eventos` · `compras` · `religioso` · `histórico`
+
+> **Categoria `familia` (família / adequado para crianças):** conforme o RF04, passeios adequados para crianças são identificados por esta **categoria**, e não por um campo separado. Um passeio pode ter `familia` junto com outras categorias (ex.: `natureza` + `familia`). Quando houver valor específico para crianças, ele vai no campo `preco_infantil`.
 
 ## Metas de qualidade do catálogo (Semana 1 → Semana 2)
 
