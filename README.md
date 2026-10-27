@@ -38,13 +38,40 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 
 ## Equipe
 
-| Integrante | Função | GitHub |
-| --- | --- | --- |
-| <img src="https://github.com/dudsstar16.png?size=80" width="56" height="56" alt="Foto de Eduarda" /> | **Eduarda** — Cientista de Dados | [@dudsstar16](https://github.com/dudsstar16) |
-| <img src="https://github.com/Br3n0G.png?size=80" width="56" height="56" alt="Foto de Breno" /> | **Breno** — MLOps | [@Br3n0G](https://github.com/Br3n0G) |
-| <img src="https://github.com/LarissaGiffoni.png?size=80" width="56" height="56" alt="Foto de Larissa" /> | **Larissa** — Engenheira de Software | [@LarissaGiffoni](https://github.com/LarissaGiffoni) |
-| <img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="56" height="56" alt="Foto de Alexandre Sousa" /> | **Alexandre Sousa** — Engenheiro de IA | [@aleesousa](https://github.com/aleesousa) |
-| 👤 | **Isabel** — Papel a definir | GitHub pendente |
+<table>
+<tr>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/dudsstar16"><img src="https://github.com/dudsstar16.png" width="96" height="96" alt="Foto de Eduarda"></a>
+<br><strong>Eduarda</strong>
+<br><sub>Cientista de Dados</sub>
+<br><a href="https://github.com/dudsstar16"><img src="https://img.shields.io/badge/GitHub-dudsstar16-181717?logo=github&logoColor=white" alt="GitHub dudsstar16"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/Br3n0G"><img src="https://github.com/Br3n0G.png" width="96" height="96" alt="Foto de Breno"></a>
+<br><strong>Breno</strong>
+<br><sub>MLOps</sub>
+<br><a href="https://github.com/Br3n0G"><img src="https://img.shields.io/badge/GitHub-Br3n0G-181717?logo=github&logoColor=white" alt="GitHub Br3n0G"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/LarissaGiffoni"><img src="https://github.com/LarissaGiffoni.png" width="96" height="96" alt="Foto de Larissa"></a>
+<br><strong>Larissa</strong>
+<br><sub>Engenheira de Software</sub>
+<br><a href="https://github.com/LarissaGiffoni"><img src="https://img.shields.io/badge/GitHub-LarissaGiffoni-181717?logo=github&logoColor=white" alt="GitHub LarissaGiffoni"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/aleesousa"><img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="96" height="96" alt="Foto de Alexandre Sousa"></a>
+<br><strong>Alexandre Sousa</strong>
+<br><sub>Engenheiro de IA</sub>
+<br><a href="https://github.com/aleesousa"><img src="https://img.shields.io/badge/GitHub-aleesousa-181717?logo=github&logoColor=white" alt="GitHub aleesousa"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="96" height="96" alt="Perfil pendente de Isabel">
+<br><strong>Isabel</strong>
+<br><sub>Função a definir</sub>
+<br><sub>GitHub pendente</sub>
+</td>
+</tr>
+</table>
 
 
 ---
