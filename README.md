@@ -150,9 +150,9 @@ A interação com o assistente será exclusivamente por texto. Entrada e saída 
 
 No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
 
-### Papéis dos agentes (Semana 5)
+### Papéis dos agentes (Semanas 4 e 5)
 
-O sistema conta com **5 agentes especializados que reportam para um agente principal**, responsável por gerar a resposta final personalizada ao usuário:
+O sistema conta com **5 agentes especializados que reportam para um agente principal**, responsável por gerar a resposta final personalizada ao usuário. Seguindo o roadmap do Challenge, a primeira versão dos agentes é entregue na **Semana 4** (primeiro sistema multiagentes) e a integração de cada agente com suas fontes de dados e APIs é concluída na **Semana 5** (agentes multimodais):
 
 - **Agente Principal (Orquestrador):** recebe as preferências e restrições do usuário, distribui as demandas para os especialistas, consolida os resultados e formula o roteiro final personalizado e justificado.
 - **Lazer e Eventos:** recupera passeios e eventos do catálogo curado (RAG com `pgvector`), validando categorias (incluindo rotinas para famílias com crianças), horários, preços e regras de visitação.
@@ -198,8 +198,8 @@ O cronograma segue o roadmap oficial do Challenge 2, com **7 semanas**. Cada sem
 | 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | [Documentos da Semana 1](documentos/semana-1/README.md) e wireframes. |
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Catálogo inicial no Supabase com pgvector e telas básicas. |
 | 3 | Comparação LLM x RAG | Respostas baseadas em evidências | Mesmo conjunto de perguntas para o LLM com e sem RAG. |
-| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Estruturação inicial dos agentes e regras de negócio determinísticas. |
-| 5 | Multimodalidade / Multiagentes | Sistema multiagentes completo | 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando ao agente principal orquestrador. |
+| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Primeira versão dos 5 agentes especializados (lazer/eventos, mobilidade, clima, financeiro, planejador) reportando ao agente principal orquestrador, com regras de negócio determinísticas. |
+| 5 | Multimodalidade | Agentes multimodais | Cada agente passa a combinar diferentes fontes de dados por APIs (catálogo, mapas e rotas, previsão do clima). Sem voz; interpretação a validar com os mentores. |
 | 6 | Integração completa | Aplicação funcional | Telas, API e IA no fluxo completo do sistema web. |
 | 7 | Testes e refinamento | Relatório final + apresentação | Testes de usabilidade, avaliação das métricas e apresentação. |
 
