@@ -2,15 +2,15 @@
 
 **Seu rolê, seu tempo, seu bolso.**
 
-Proposta de aplicativo para ajudar moradores de Brasília a planejar momentos de lazer a partir de seus interesses, dias livres e orçamento mensal. O BSBora combina sugestões personalizadas, calendário de passeios e comparação de custos de transporte para apoiar decisões informadas sobre o tempo livre.
+Proposta de sistema web para ajudar moradores de Brasília a planejar momentos de lazer a partir de seus interesses, dias livres e orçamento mensal. O BSBora combina sugestões personalizadas, calendário de passeios e comparação de custos de transporte para apoiar decisões informadas sobre o tempo livre.
 
 Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado à Big Idea **Qualidade de Vida**, com execução planejada em sete semanas.
 
 ## Status do projeto
 
-O projeto está em fase de definição e planejamento. Este repositório contém a documentação inicial; ainda não há aplicativo ou API implementados. As funcionalidades, tecnologias e metas descritas abaixo são propostas sujeitas à validação da equipe, dos mentores e dos usuários. O nome e o slogan também são provisórios.
+O projeto está em fase de definição e planejamento. Este repositório contém a documentação inicial; ainda não há sistema web ou API implementados. As funcionalidades, tecnologias e metas descritas abaixo são propostas sujeitas à validação da equipe, dos mentores e dos usuários. O nome e o slogan também são provisórios.
 
-A proposta original apresenta uma aplicação web responsiva. O plano mobile adapta essa base para Android e iOS; este README segue essa direção para a implementação planejada.
+O foco atual é desenvolver um **sistema web responsivo**, acessível pelo navegador. O aplicativo mobile é uma ideia de evolução futura, a ser avaliada após o desenvolvimento e a validação da versão web.
 
 ## Problema e objetivo
 
@@ -46,13 +46,13 @@ A meta inicial sugerida para o catálogo é de **30 a 50 passeios**, condicionad
 
 | Camada | Tecnologia e responsabilidade |
 | --- | --- |
-| Aplicativo | **React Native + Expo + TypeScript** para telas, navegação e calendário em Android e iOS. |
+| Frontend web | Aplicação web responsiva com calendário e cartões de passeios; framework e tecnologias de interface ainda a definir. |
 | API e regras | **Python + FastAPI** para perfis, agenda, custos, validações e orquestração. |
 | Dados | **Supabase/PostgreSQL** para perfis, passeios e planos; **pgvector** para a recuperação vetorial do RAG. |
 | Inteligência artificial | **LLM + RAG**, com recuperação de informações verificáveis e coordenação de agentes especializados. |
 | Serviços externos | Fontes de passeios e serviços de rotas/mapas, escolhidos conforme cobertura, licença, custo e disponibilidade. |
 
-No fluxo técnico proposto, o aplicativo consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
+No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
 
 ### Papéis dos agentes
 
@@ -75,21 +75,21 @@ Somas, limites financeiros e validações de datas devem ser implementados com *
 - Usar localização aproximada e coleta mínima de dados; renda e extratos bancários ficam fora do MVP.
 - Respeitar o teto definido pelo usuário, oferecendo opções gratuitas ou próximas quando o saldo estiver baixo, sem incentivar endividamento.
 
-O aplicativo pretende apoiar organização, autonomia e bem-estar percebido. Não há alegação de prevenção ou tratamento de burnout, nem benefício clínico comprovado.
+O sistema pretende apoiar organização, autonomia e bem-estar percebido. Não há alegação de prevenção ou tratamento de burnout, nem benefício clínico comprovado.
 
 ## Cronograma proposto
 
 | Semana | Foco e entregas planejadas |
 | --- | --- |
-| 1 | Definição do problema, público, requisitos, riscos e métricas; wireframes e estrutura inicial do Expo. |
+| 1 | Definição do problema, público, requisitos, riscos e métricas; wireframes e estrutura inicial da aplicação web. |
 | 2 | Telas básicas, banco de dados e catálogo inicial, com preparação da base de recuperação. |
 | 3 | Implementação do RAG e comparação controlada entre LLM sem recuperação e LLM com RAG. |
 | 4 | Orquestração dos agentes e validação das regras de agenda, orçamento e transporte. |
 | 5 | Interação por voz e testes de multimodalidade. |
-| 6 | Integração das telas com a API e execução do fluxo completo no celular. |
-| 7 | Testes de usabilidade, ajustes, avaliação das métricas e geração de APK de demonstração. |
+| 6 | Integração das telas com a API e execução do fluxo completo no sistema web. |
+| 7 | Testes de usabilidade, ajustes, avaliação das métricas e apresentação do protótipo web. |
 
-A entrega sugerida inclui **APK Android demonstrável**, backend acessível, repositório documentado e avaliação das recomendações. O iOS poderá compartilhar a base de código, mas sua distribuição exige etapas próprias da Apple.
+A entrega planejada inclui **sistema web funcional**, backend acessível, repositório documentado e avaliação das recomendações.
 
 ## Avaliação planejada
 
@@ -108,6 +108,7 @@ A comparação entre LLM e RAG deve usar o mesmo conjunto de perguntas e avaliar
 
 ## Evoluções futuras
 
+- Aplicativo mobile para Android e iOS, após validação da versão web. React Native, Expo e TypeScript são possibilidades registradas no plano mobile, sem adoção definida para esta etapa.
 - Integração com Google Calendar, reservas de ingressos, previsão meteorológica e alertas automáticos.
 - Importação de despesas bancárias e histórico de preferências.
 - Leitura de cartazes e imagens de eventos, com confirmação das informações críticas.
@@ -120,13 +121,14 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 - Definir a cobertura inicial: Plano Piloto, Regiões Administrativas selecionadas ou todo o DF.
 - Priorizar o perfil de usuário para entrevistas e validação.
 - Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação.
+- Definir as tecnologias do frontend web.
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
 - Definir perguntas e cenários de teste desde a primeira semana.
 
 ## Documentação
 
-- [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): adaptação técnica para mobile, funcionalidades, cronograma e entrega sugerida.
-- [Proposta preliminar — Challenge 2](documentos/BSBora_Proposta_Challenge_2.pdf): contexto, público, experiência de uso, arquitetura, riscos, métricas e pontos a validar.
+- [Proposta preliminar — Challenge 2](documentos/BSBora_Proposta_Challenge_2.pdf): referência para o sistema web, com contexto, público, experiência de uso, arquitetura, riscos, métricas e pontos a validar.
+- [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): estudo de uma possível evolução futura para mobile; seu cronograma e suas entregas não representam o escopo atual.
 
-As instruções de instalação e execução serão adicionadas quando a estrutura do aplicativo e da API estiver implementada.
+As instruções de instalação e execução serão adicionadas quando a estrutura do sistema web e da API estiver implementada.
