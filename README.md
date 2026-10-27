@@ -29,10 +29,12 @@ O público inicial são moradores do Distrito Federal que buscam passeios de fim
 | Recomendações | Catálogo curado de passeios no Distrito Federal, com sugestões compatíveis com o perfil, justificativas e fontes identificáveis. |
 | Transporte | Comparação de custos estimados de ida e volta por ônibus, carro e transporte por aplicativo, mostrando total e custo por pessoa. |
 | Orçamento | Cálculo dos gastos planejados e do saldo restante, com possibilidade de reserva para imprevistos e validação do teto mensal. |
-| Assistente de IA | Consulta por texto, explicação das sugestões e apresentação de alternativas. Entrada e saída por voz como evolução priorizada no cronograma. |
+| Assistente de IA | Consultas e respostas por texto, com explicação das sugestões e apresentação de alternativas. |
 | Transparência | Identificação de fontes, data de verificação, hipóteses de cálculo e informações não confirmadas. |
 
 A meta inicial sugerida para o catálogo é de **30 a 50 passeios**, condicionada à disponibilidade de dados confiáveis.
+
+A interação com o assistente será exclusivamente por texto. Entrada e saída por voz estão fora do escopo do projeto.
 
 ## Fluxo de uso
 
@@ -91,7 +93,7 @@ Os riscos abaixo foram identificados no planejamento do sistema web. As medidas 
 | Exposição de dados pessoais | Revelar localização, rotina, agenda ou orçamento dos usuários. | Coletar o mínimo necessário, usar localização aproximada, restringir acessos aos dados e definir regras de retenção e exclusão. |
 | Manipulação dos agentes por conteúdo externo | Instruções maliciosas em páginas ou documentos recuperados alterarem o comportamento da IA, caracterizando um ataque de prompt injection. | Tratar conteúdo externo como dados, limitar as permissões dos agentes e validar suas saídas antes da execução de ações. |
 | Dependência e custo de serviços externos | Falhas, limites de uso ou cobranças de serviços de mapas e IA prejudicarem a disponibilidade e a viabilidade do sistema. | Definir limites de consumo, monitorar custos e permitir funcionamento parcial quando uma integração estiver indisponível, informando as limitações ao usuário. |
-| Escopo excessivo em sete semanas | Calendário, RAG, agentes, transporte e voz ficarem incompletos ou pouco testados. | Priorizar um fluxo web completo e simples, integrar desde o início e ampliar funcionalidades conforme os resultados. |
+| Escopo excessivo em sete semanas | Calendário, RAG, agentes e transporte ficarem incompletos ou pouco testados. | Priorizar um fluxo web completo e simples, integrar desde o início e ampliar funcionalidades conforme os resultados. |
 | Baixa utilidade e dificuldade de uso | Sugestões repetitivas, pouco relevantes ou uma configuração trabalhosa reduzirem a adoção. | Testar cedo com moradores de diferentes regiões e medir relevância, tempo de planejamento e conclusão de tarefas sem ajuda. |
 | Condições climáticas desfavoráveis | Chuva ou outras condições tornarem um passeio ao ar livre inadequado. | Identificar atividades ao ar livre e orientar a conferência das condições perto da data, sem prometer clima favorável. Quando houver integração meteorológica, informar local, atualização e incerteza da previsão e oferecer alternativas. |
 
@@ -107,7 +109,7 @@ Referências de apoio: [guia de segurança da informação da ANPD](https://www.
 | 2 | Telas básicas, banco de dados e catálogo inicial, com preparação da base de recuperação. |
 | 3 | Implementação do RAG e comparação controlada entre LLM sem recuperação e LLM com RAG. |
 | 4 | Orquestração dos agentes e validação das regras de agenda, orçamento e transporte. |
-| 5 | Interação por voz e testes de multimodalidade. |
+| 5 | Refinamento do assistente por texto e testes das recomendações, explicações e respostas de incerteza. |
 | 6 | Integração das telas com a API e execução do fluxo completo no sistema web. |
 | 7 | Testes de usabilidade, ajustes, avaliação das métricas e apresentação do protótipo web. |
 
@@ -151,5 +153,7 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 
 - [Proposta preliminar — Challenge 2](documentos/BSBora_Proposta_Challenge_2.pdf): referência para o sistema web, com contexto, público, experiência de uso, arquitetura, riscos, métricas e pontos a validar.
 - [Plano resumido do aplicativo mobile](documentos/BSBora_Plano_Resumido_App_Mobile.pdf): estudo de uma possível evolução futura para mobile; seu cronograma e suas entregas não representam o escopo atual.
+
+As referências a entrada e saída por voz nos PDFs fazem parte das propostas preliminares e foram descartadas do escopo atual.
 
 As instruções de instalação e execução serão adicionadas quando a estrutura do sistema web e da API estiver implementada.
