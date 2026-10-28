@@ -22,12 +22,12 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 | RF01 | Cadastro e login do usuário (Supabase). | Média |
 | RF02 | Perfil com interesses, região de partida aproximada, número de participantes e teto mensal de lazer. | Alta |
 | RF03 | Catálogo de passeios do DF com categoria, região, preço, horário, fonte e data de verificação. | Alta |
-| RF04 | Filtro por categoria e região, incluindo as etiquetas **adequado para crianças** e **ao ar livre / coberto**. | Alta |
+| RF04 | Filtro por categoria e região, incluindo a categoria de **família / adequado para crianças** e etiqueta **ao ar livre / coberto**. | Alta |
 | RF05 | Cálculo do total planejado e do saldo restante, com reserva opcional para imprevistos. | Alta |
 | RF06 | Agenda para marcar dias e períodos livres. | Média |
 | RF07 | Estimativa de custo de transporte (ônibus, carro e aplicativo), com aviso de que é estimativa. | Média |
 | RF08 | Assistente por texto que explica as sugestões com base no catálogo (RAG). | Média |
-| RF09 | Agentes especializados que leem dados de APIs (lazer, mobilidade, financeiro, planejador). | Média |
+| RF09 | 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando a um agente principal orquestrador. | Média |
 
 ## Requisitos não funcionais
 
@@ -50,7 +50,7 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 | **Supabase (PostgreSQL + pgvector + login)** | Reúne banco, login e busca vetorial do RAG em um único serviço gratuito para protótipos. |
 | **LLM + RAG** | Reduz respostas inventadas, porque a IA responde a partir do catálogo verificado. A Semana 3 compara LLM com e sem RAG. |
 | **Agentes que leem dados de APIs** | Cada agente tem uma fonte de dados própria, o que facilita testar e trocar integrações. As APIs candidatas ainda serão definidas. |
-| **Especialização do Agente de Clima** | Duas opções registradas para teste: **Opção 1 (Lazer + Clima)** para viabilidade direta do passeio sem ping-pong de mensagens; e **Opção 2 (Mobilidade + Clima)** como alternativa de contingência caso a primeira opção apresente sobrecarga ou lentidão nos testes práticos. |
+| **Agente de Clima próprio** | O clima é um dos 5 agentes especializados e define a viabilidade de passeios ao ar livre. Se os testes mostrarem sobrecarga, a consulta pode ser acoplada ao agente de Lazer ou ao de Mobilidade. |
 | **Sem voz** | O protótipo foca em ler dados das APIs e responder por texto. A multimodalidade da Semana 5 é tratada como a combinação de várias fontes de dados pelos agentes (interpretação a validar com os mentores). |
 
 ## Fora do escopo

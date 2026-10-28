@@ -38,12 +38,41 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 
 ## Equipe
 
-| Papel | Pessoa |
-| --- | --- |
-| Cientista de dados | Eduarda |
-| MLOps | Breno |
-| Engenheira de software | Larissa |
-| A definir | Isabel |
+<table width="100%">
+<tr>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/dudsstar16"><img src="https://github.com/dudsstar16.png" width="120" height="120" alt="Foto de Eduarda"></a>
+<br><strong>Eduarda</strong>
+<br><sub>Cientista de Dados</sub>
+<br><a href="https://github.com/dudsstar16"><img src="https://img.shields.io/badge/GitHub-dudsstar16-181717?logo=github&logoColor=white" alt="GitHub dudsstar16"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/Br3n0G"><img src="https://github.com/Br3n0G.png" width="120" height="120" alt="Foto de Breno"></a>
+<br><strong>Breno</strong>
+<br><sub>MLOps</sub>
+<br><a href="https://github.com/Br3n0G"><img src="https://img.shields.io/badge/GitHub-Br3n0G-181717?logo=github&logoColor=white" alt="GitHub Br3n0G"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/LarissaGiffoni"><img src="https://github.com/LarissaGiffoni.png" width="120" height="120" alt="Foto de Larissa"></a>
+<br><strong>Larissa</strong>
+<br><sub>Engenheira de Software</sub>
+<br><a href="https://github.com/LarissaGiffoni"><img src="https://img.shields.io/badge/GitHub-LarissaGiffoni-181717?logo=github&logoColor=white" alt="GitHub LarissaGiffoni"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/aleesousa"><img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="120" height="120" alt="Foto de Alexandre Sousa"></a>
+<br><strong>Alexandre Sousa</strong>
+<br><sub>Engenheiro de IA</sub>
+<br><a href="https://github.com/aleesousa"><img src="https://img.shields.io/badge/GitHub-aleesousa-181717?logo=github&logoColor=white" alt="GitHub aleesousa"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="120" height="120" alt="Perfil pendente de Isabel">
+<br><strong>Isabel</strong>
+<br><sub>Função a definir</sub>
+<br><sub>GitHub pendente</sub>
+</td>
+</tr>
+</table>
+
 
 ---
 
@@ -84,7 +113,7 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 - Telas em **HTML + JavaScript simples**: perfil e preferências, lista de passeios em cartões e resumo do plano.
 - **Catálogo inicial** de passeios do DF (começando pequeno e crescendo até a meta de 30 a 50).
 - **Filtro por categoria** (ex.: cultura, natureza, gastronomia) e por região.
-- Etiquetas no catálogo: **adequado para crianças** e **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
+- No catálogo: a categoria **família / adequado para crianças** e a etiqueta **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
 - **Cálculo do orçamento** com regras determinísticas: total planejado e saldo restante.
 
 ### 🟡 Médio: deixa o protótipo completo (meta da entrega)
@@ -97,8 +126,8 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 ### 🔴 Difícil: se der tempo (ou versão mínima)
 
 - **Assistente de IA com RAG**, explicando as sugestões com base no catálogo.
-- **Orquestração de vários agentes** (orquestrador, lazer, mobilidade, financeiro, planejador).
-- **Agentes lendo dados de APIs** (mapas e rotas, clima, fontes de passeios), cada agente com sua fonte.
+- **Orquestração de sistema multiagentes:** 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando para um agente principal orquestrador.
+- **Agentes lendo dados de APIs** (mapas e rotas, previsão de clima, fontes de passeios), cada agente com sua integração.
 
 > **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). Voz está fora do escopo.
 
@@ -150,30 +179,16 @@ A interação com o assistente será exclusivamente por texto. Entrada e saída 
 
 No fluxo técnico proposto, a interface web consulta a API, o motor de IA recupera informações do catálogo por RAG e os serviços calculam trajetos e custos. Regras de negócio validam datas e orçamento antes da apresentação das opções ao usuário.
 
-### Papéis dos agentes e arquitetura de especialidade
+### Papéis dos agentes (Semanas 4 e 5)
 
-O sistema é coordenado por um **Agente Principal (Orquestrador)** que recebe as preferências e restrições do usuário, distribui as tarefas para os agentes especialistas e sintetiza a resposta final personalizada.
+O sistema conta com **5 agentes especializados que reportam para um agente principal**, responsável por gerar a resposta final personalizada ao usuário. Seguindo o roadmap do Challenge, a primeira versão dos agentes é entregue na **Semana 4** (primeiro sistema multiagentes) e a integração de cada agente com suas fontes de dados e APIs é concluída na **Semana 5** (agentes multimodais):
 
-Para evitar sobrecarga de processamento (latência e excesso de ferramentas por agente) e manter a arquitetura simples, o projeto prevê **duas opções de especialização** para a integração dos dados de **Clima (API meteorológica)**, permitindo que a equipe teste e valide a melhor opção na prática:
-
-- **Opção 1 (Primária / Recomendada — Lazer + Clima):**
-  - **Lazer & Clima:** une a curadoria do catálogo (RAG via `pgvector`) à checagem de previsão do tempo (API meteorológica).
-    * *Por que testar primeiro:* A previsão é um critério de viabilidade do passeio. Se um local for ao ar livre e houver previsão de chuva na data, o próprio agente já sugere uma alternativa coberta, evitando idas e vindas de mensagens (*ping-pong*) com o Orquestrador.
-    * *Carga:* Permanece leve, pois o agente utiliza apenas duas ferramentas (*tools*): busca no catálogo e consulta à API de clima.
-  - **Mobilidade:** foca exclusivamente em rotas, distâncias, tempos de trajeto e custos de deslocamento (ônibus, carro, aplicativo).
-  - **Financeiro:** validação determinística de teto de gastos, custos por participante e saldo restante.
-  - **Planejador:** alocação dos passeios nos dias e turnos livres da agenda.
-
-- **Opção 2 (Contingência / Alternativa — Mobilidade + Clima):**
-  - **Mobilidade & Clima:** agrupa as consultas a serviços externos dinâmicos (API de mapas/rotas + API de previsão do tempo).
-    * *Quando adotar:* Se durante os testes a Opção 1 se mostrar pesada ou apresentar lentidão combinando RAG e clima no mesmo agente.
-    * *Ponto de atenção:* O agente de mobilidade apenas sinaliza o risco de chuva para o trajeto/local, cabendo ao Orquestrador solicitar outro passeio ao agente de Lazer caso necessário.
-  - **Lazer:** foca exclusivamente na recuperação vetorial (RAG) do catálogo de passeios.
-
-> **Conceitos técnicos da decisão:**
-> - **Carga do agente / Janela de contexto:** Quantidade de informações e regras que o modelo precisa processar de uma só vez. Quanto mais focado for o agente, mais rápida e precisa é a resposta.
-> - **Tool calling (Chamada de ferramentas):** Capacidade da IA de consultar fontes externas (como APIs de clima ou banco de dados). Limitar a 1 ou 2 ferramentas por agente evita confusão e respostas lentas.
-> - **Ping-pong de orquestração:** Troca excessiva de mensagens entre agentes para resolver um único conflito (ex.: clima rejeita parque → orquestrador recebe → pede novo passeio ao lazer).
+- **Agente Principal (Orquestrador):** recebe as preferências e restrições do usuário, distribui as demandas para os especialistas, consolida os resultados e formula o roteiro final personalizado e justificado.
+- **Lazer e Eventos:** recupera passeios e eventos do catálogo curado (RAG com `pgvector`), validando categorias (incluindo rotinas para famílias com crianças), horários, preços e regras de visitação.
+- **Mobilidade:** consulta distâncias e rotas para estimar custos e opções de deslocamento (ônibus, carro, aplicativo).
+- **Clima:** consome uma **API de previsão do tempo** para checar as condições climáticas nas datas planejadas e avaliar a viabilidade de passeios abertos ou cobertos.
+- **Financeiro:** valida o cumprimento estrito do teto orçamentário mensal, custos por participante, reserva de imprevistos e saldo restante (regras determinísticas).
+- **Planejador:** aloca os passeios nos dias e turnos livres marcados na agenda mensal, propondo substituições viáveis.
 
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 
@@ -212,8 +227,8 @@ O cronograma segue o roadmap oficial do Challenge 2, com **7 semanas**. Cada sem
 | 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | [Documentos da Semana 1](documentos/semana-1/README.md) e wireframes. |
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Catálogo inicial no Supabase com pgvector e telas básicas. |
 | 3 | Comparação LLM x RAG | Respostas baseadas em evidências | Mesmo conjunto de perguntas para o LLM com e sem RAG. |
-| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Agentes de lazer, mobilidade, financeiro e planejador, com regras de agenda e orçamento. |
-| 5 | Multimodalidade | Agentes multimodais | Agentes lendo dados de várias APIs (mapas, clima, fontes de passeios). Sem voz; interpretação a validar com os mentores. |
+| 4 | Sistema multiagentes | Primeiro sistema multiagentes | Primeira versão dos 5 agentes especializados (lazer/eventos, mobilidade, clima, financeiro, planejador) reportando ao agente principal orquestrador, com regras de negócio determinísticas. |
+| 5 | Multimodalidade | Agentes multimodais | Cada agente passa a combinar diferentes fontes de dados por APIs (catálogo, mapas e rotas, previsão do clima). Sem voz; interpretação a validar com os mentores. |
 | 6 | Integração completa | Aplicação funcional | Telas, API e IA no fluxo completo do sistema web. |
 | 7 | Testes e refinamento | Relatório final + apresentação | Testes de usabilidade, avaliação das métricas e apresentação. |
 
@@ -224,8 +239,9 @@ A entrega planejada inclui **sistema web funcional**, backend acessível, reposi
 ## Evoluções futuras
 
 - Aplicativo mobile para Android e iOS, após validação da versão web. React Native, Expo e TypeScript são possibilidades registradas no plano mobile, sem adoção definida para esta etapa.
-- Versão completa dos filtros de **clima** (previsão do tempo com troca automática de passeio) e de **crianças** (faixa etária e preço infantil).
-- Integração com Google Calendar, reservas de ingressos, previsão meteorológica e alertas automáticos.
+- Alertas em tempo real de mudança de tempo com sugestão de troca automática do passeio.
+- Filtros detalhados de faixa etária e preços específicos/gratuidade infantil por atrativo.
+- Integração com Google Calendar e reservas de ingressos.
 - Importação de despesas bancárias e histórico de preferências.
 - Leitura de cartazes e imagens de eventos, com confirmação das informações críticas.
 - Expansão para o Entorno e outras cidades.

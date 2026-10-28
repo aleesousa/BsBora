@@ -36,7 +36,7 @@ Esta é a lista de **fontes candidatas** para o catálogo e para os agentes. **N
 
 ### Agente de Clima (API meteorológica)
 
-> **Nota de Arquitetura:** Conforme definido no [README](../README.md#papéis-dos-agentes-e-arquitetura-de-especialidade), o consumo destas fontes de clima pode ser acoplado ao **Agente de Lazer** (Opção 1 — viabilidade direta de passeios abertos/cobertos) ou ao **Agente de Mobilidade** (Opção 2 — condições externas e trajeto), dependendo dos testes práticos de carga e latência.
+> **Nota de arquitetura:** conforme o [README](../README.md#papéis-dos-agentes-semanas-4-e-5), o Clima é um agente próprio. Se os testes de carga e latência indicarem, a consulta pode ser acoplada ao agente de Lazer ou ao de Mobilidade.
 
 | Fonte candidata | Tipo | O que pode fornecer | Situação |
 | --- | --- | --- | --- |

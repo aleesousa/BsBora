@@ -9,7 +9,7 @@ Stakeholders são as pessoas e organizações que **usam, influenciam ou são af
 | Stakeholder | Interesse no BSBora | Influência | Como envolver |
 | --- | --- | --- | --- |
 | **Moradores do DF** (sozinhos, casais, amigos) | Planejar passeios sem estourar o orçamento. | Alta | Entrevistas e testes de usabilidade. |
-| **Famílias com crianças** | Encontrar passeios adequados para crianças. | Alta | Entrevistas; validar a etiqueta "adequado para crianças". |
+| **Famílias com crianças** | Encontrar passeios adequados para crianças. | Alta | Entrevistas; validar a categoria "família / adequado para crianças". |
 | **Moradores de Regiões Administrativas distantes do Plano Piloto** | Receber sugestões próximas e com deslocamento viável. | Média | Incluir nas entrevistas para evitar viés de cobertura. |
 | **Pessoas com deficiência ou mobilidade reduzida** | Informações confiáveis de acessibilidade. | Média | Validar os campos de acessibilidade do catálogo. |
 | **Equipe do projeto** | Entregar o protótipo dentro do roadmap de 7 semanas. | Alta | Divisão de papéis (ver [Equipe](../../README.md#equipe)). |
