@@ -36,7 +36,7 @@ Esta é a lista de **fontes candidatas** para o catálogo e para os agentes. **N
 
 ### Agente de Clima (API meteorológica)
 
-> **Nota:** o Agente de Clima só será desenvolvido na etapa dos agentes especialistas (a partir da Semana 5). Até lá, estas fontes servem apenas como candidatas. Ver a [estratégia em fases](../README.md#papéis-dos-agentes-semanas-4-e-5).
+> **Nota:** o Agente de Clima só será desenvolvido na etapa dos agentes especialistas (a partir da Semana 4, multiagentes), quando a equipe testar as duas opções: **Lazer + Clima** (recomendada para testar primeiro) ou **Mobilidade + Clima** (contingência). Até lá, estas fontes servem apenas como candidatas. Ver a [estratégia em fases](../README.md#papéis-dos-agentes-semanas-4-e-5).
 
 | Fonte candidata | Tipo | O que pode fornecer | Situação |
 | --- | --- | --- | --- |
