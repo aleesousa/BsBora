@@ -65,7 +65,7 @@ Lista inicial (a validar com a equipe):
 
 | Meta | Valor proposto | Ligação |
 | --- | --- | --- |
-| Tamanho do catálogo | Demo inicial com **30 passeios** (cerca de 6 por integrante da equipe) e depois crescer até a meta do projeto | [README](../README.md#funcionalidades-planejadas) |
+| Tamanho do catálogo | Demo inicial com **30 passeios** (divisão da pesquisa a definir na Semana 2) e depois crescer até a meta do projeto | [README](../README.md#funcionalidades-planejadas) |
 | Passeios com fonte e data de verificação | 100% | Risco "Informações desatualizadas" |
 | Passeios gratuitos | Proporção a definir | Respeito ao orçamento |
 | Distribuição por Região Administrativa | Evitar concentração no Plano Piloto | Risco "Cobertura desigual do DF" (viés) |

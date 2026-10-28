@@ -191,7 +191,7 @@ O sistema conta com **5 agentes especializados que reportam para um agente princ
 - **Planejador:** aloca os passeios nos dias e turnos livres marcados na agenda mensal, propondo substituições viáveis.
 
 > **Estratégia de desenvolvimento (em fases):**
-> 1. **Início — foco no Agente Principal:** o desenvolvimento começa apenas pelo agente principal, com uma **base pequena de passeios (demo) com 30 passeios**, divididos entre os 5 integrantes para a pesquisa de dados (cerca de 6 passeios por pessoa), suficiente para acompanhar se ele responde de forma eficiente.
+> 1. **Início — foco no Agente Principal:** o desenvolvimento começa apenas pelo agente principal, com uma **base pequena de passeios (demo) com 30 passeios**, suficiente para acompanhar se ele responde de forma eficiente. A divisão da pesquisa entre os 5 integrantes será definida na Semana 2.
 > 2. **Semana 4 em diante (multiagentes) — um agente por vez:** com o agente principal funcionando, a equipe passa a desenvolver cada agente especialista individualmente (Lazer e Eventos, Mobilidade, Clima, Financeiro, Planejador) e a ampliar a base de dados.
 >
 > **Clima — decisão adiada para o início dos multiagentes (Semana 4):** há duas opções a testar na prática, e nenhuma será implementada antes disso.
