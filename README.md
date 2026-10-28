@@ -190,6 +190,12 @@ O sistema conta com **5 agentes especializados que reportam para um agente princ
 - **Financeiro:** valida o cumprimento estrito do teto orçamentário mensal, custos por participante, reserva de imprevistos e saldo restante (regras determinísticas).
 - **Planejador:** aloca os passeios nos dias e turnos livres marcados na agenda mensal, propondo substituições viáveis.
 
+> **Estratégia de desenvolvimento (em fases):**
+> 1. **Início — foco no Agente Principal:** o desenvolvimento começa apenas pelo agente principal, com uma **base pequena de passeios (demo)**, suficiente para acompanhar se ele responde de forma eficiente.
+> 2. **Semana 5 em diante — um agente por vez:** com o agente principal funcionando, a equipe passa a desenvolver cada agente especialista individualmente (Lazer e Eventos, Mobilidade, Clima, Financeiro, Planejador) e a ampliar a base de dados.
+>
+> Decisões como onde fica a consulta de clima (agente próprio ou acoplada ao Lazer/Mobilidade) serão tomadas nessa etapa, com base nos resultados.
+
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 
 ---

@@ -65,7 +65,7 @@ Lista inicial (a validar com a equipe):
 
 | Meta | Valor proposto | Ligação |
 | --- | --- | --- |
-| Tamanho do catálogo | 30 a 50 passeios | [README](../README.md#funcionalidades-planejadas) |
+| Tamanho do catálogo | Começar com uma **base pequena (demo)** e crescer até 30 a 50 passeios | [README](../README.md#funcionalidades-planejadas) |
 | Passeios com fonte e data de verificação | 100% | Risco "Informações desatualizadas" |
 | Passeios gratuitos | Proporção a definir | Respeito ao orçamento |
 | Distribuição por Região Administrativa | Evitar concentração no Plano Piloto | Risco "Cobertura desigual do DF" (viés) |

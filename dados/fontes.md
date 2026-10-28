@@ -36,7 +36,7 @@ Esta é a lista de **fontes candidatas** para o catálogo e para os agentes. **N
 
 ### Agente de Clima (API meteorológica)
 
-> **Nota de arquitetura:** conforme o [README](../README.md#papéis-dos-agentes-semanas-4-e-5), o Clima é um agente próprio. Se os testes de carga e latência indicarem, a consulta pode ser acoplada ao agente de Lazer ou ao de Mobilidade.
+> **Nota:** o Agente de Clima só será desenvolvido na etapa dos agentes especialistas (a partir da Semana 5). Até lá, estas fontes servem apenas como candidatas. Ver a [estratégia em fases](../README.md#papéis-dos-agentes-semanas-4-e-5).
 
 | Fonte candidata | Tipo | O que pode fornecer | Situação |
 | --- | --- | --- | --- |
