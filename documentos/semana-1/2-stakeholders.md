@@ -1,6 +1,6 @@
 # 2. Mapa de Stakeholders — BSBora
 
-[← Voltar à Semana 1](README.md) · [Ver Personas](personas.md) · [Ver Premissas](premissas.md)
+[← Voltar à Semana 1](README.md) · [Ver Personas](personas.md)
 
 **Responsável:** Eduarda (Cientista de Dados) · **Semana:** 1 · **Situação:** Oficial
 
@@ -23,11 +23,15 @@ Fluxo de trabalho integrado da equipe para as entregas do projeto:
    ┌──────────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐
    │ • Banco Supabase     │       │ • Catálogo de 30-50  │       │ • API FastAPI        │       │ • Validação Usuários │
    │ • Extensão pgvector  │ ────► │ • Embeddings / Busca │ ────► │ • Contratos de Dados │ ────► │ • Matriz de Riscos   │
-   │ • Ingestão APIs Clima│       │ • Factualidade ≥95%  │       │ • Regras Determiníst.│       │ • Métricas de Aceite │
-   │   e Transporte       │       │ • Personas / Premissa│       │ • Orquestração Agente│       │ • Conformidade LGPD  │
+   │ • Ingestão de APIs   │       │ • Factualidade ≥95%  │       │ • Regras Determiníst.│       │ • Métricas de Aceite │
+   │   (Clima/Transporte) │       │                      │       │ • Orquestração Agente│       │ • Conformidade LGPD  │
+   │                      │       │                      │       │                      │       │                      │
+   │ ENTREGA:             │       │ ENTREGA:             │       │ ENTREGA:             │       │ ENTREGA:             │
+   │ Catálogo Estruturado │       │ Recomendações c/Fonte│       │ Fluxo Web Funcional  │       │ Registro de Aceite   │
    └──────────────────────┘       └──────────────────────┘       └──────────────────────┘       └──────────────────────┘
               ▲                                                                                             │
-              └───────────────────────────── Feedback Contínuo ─────────────────────────────────────────────┘
+              └───────────────────────── ↻ CICLO COMPLETO: Alinhar → Testar → Corrigir ─────────────────────┘
+                                         (ENTREGA: Versão Final Revisada)
 ```
 
 ---
@@ -47,27 +51,27 @@ Usuários finais do sistema, representados em detalhe no documento de [Personas]
 
 ### 🧒 Crianças & Família
 * **Foco:** Passeios seguros, rotina familiar viável e infraestrutura adequada (banheiros, alimentação, segurança).
-* **Persona de Referência:** [Marcos (Ceilândia)](personas.md#persona-1-marcos-34-anos--família--crianças).
-* **Atuação do BSBora:** Filtra categoria `familia`, evita passeios abertos em dias de chuva e calcula despesas totais.
+* **Personas de Referência:** [Marcos (Ceilândia)](personas.md#01) (pai solo) e [Ana (Recanto das Emas)](personas.md#08) (mãe de adolescente e criança).
+* **Atuação do BSBora:** Filtra categoria `familia`, checa previsão de chuva via API de clima e calcula despesas totais.
 
 ### 🎓 Jovens & Estudantes
 * **Foco:** Vida cultural ativa, feiras criativas, eventos independentes e autocuidado com custo mínimo.
-* **Persona de Referência:** [Beatriz (Asa Norte)](personas.md#persona-2-beatriz-22-anos--jovens--estudantes).
+* **Personas de Referência:** [Beatriz (Asa Norte)](personas.md#02) (universitária UnB) e [Diego (Gama)](personas.md#10) (jovem aprendiz).
 * **Atuação do BSBora:** Centraliza eventos culturais dispersos e cruza com rotas de transporte público (ônibus/metrô).
 
-### 💼 Adultos & Casais
-* **Foco:** Variedade de experiências no mês, descompressão e controle orçamentário compartilhado.
-* **Persona de Referência:** [Camila & Rafael (Águas Claras)](personas.md#persona-3-camila-29-e-rafael-31--adultos--casais).
-* **Atuação do BSBora:** Cálculo determinístico de custo por participante e acompanhamento do saldo do teto mensal.
+### 💼 Adultos, Casais & Grupos
+* **Foco:** Variedade de experiências, descompressão, divisão de despesas e horários flexíveis.
+* **Personas de Referência:** [Camila & Rafael (Águas Claras)](personas.md#05) (casal), [Júlia (Samambaia)](personas.md#06) (amigos) e [Paulo (Planaltina)](personas.md#07) (turnos).
+* **Atuação do BSBora:** Cálculo determinístico de custo por participante, acompanhamento de saldo e filtros por horários específicos.
 
 ### 👵 Idosos & Melhor Idade
 * **Foco:** Tranquilidade, contato com a natureza, caminhadas leves, áreas de descanso e boa legibilidade.
-* **Persona de Referência:** [Dona Helena (Sobradinho)](personas.md#persona-4-dona-helena-68-anos--idosos--melhor-idade).
-* **Atuação do BSBora:** Telas limpas, sem poluição visual, recomendando horários tranquilos e passeios sombreados.
+* **Persona de Referência:** [Dona Helena (Taguatinga)](personas.md#04) (aposentada).
+* **Atuação do BSBora:** Telas limpas, sem poluição visual, recomendando horários tranquilos e passeios sombreados e planos.
 
-### ♿ Pessoas com Deficiência (PcD)
-* **Foco:** Autonomia e segurança física através de acessibilidade comprovada (rampas, piso tátil, banheiros adaptados).
-* **Persona de Referência:** [Roberto (Guará)](personas.md#persona-5-roberto-42-anos--pessoas-com-deficiência-pcd).
+### ♿ Pessoas com Deficiência (PcD - Física e Sensorial)
+* **Foco:** Autonomia e segurança com acessibilidade comprovada (rampas, banheiros adaptados, alto contraste e audiodescrição).
+* **Personas de Referência:** [Roberto (Guará)](personas.md#03) (cadeirante) e [Lúcia (Sobradinho)](personas.md#09) (baixa visão).
 * **Atuação do BSBora:** Exibe apenas dados auditados; se não houver confirmação oficial, sinaliza *"Não confirmado"*.
 
 ---
@@ -104,4 +108,4 @@ Usuários finais do sistema, representados em detalhe no documento de [Personas]
 ---
 
 > [!TIP]
-> Para ver os detalhes humanos dos usuários mapeados, consulte [personas.md](personas.md). Para ver as premissas operacionais assumidas pela equipe, consulte [premissas.md](premissas.md).
+> Para ver os detalhes e arquétipos dos usuários mapeados, consulte o catálogo de [personas.md](personas.md).

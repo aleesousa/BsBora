@@ -1,125 +1,121 @@
-# Personas do Projeto — BSBora
+# 2.5 Personas | Públicos do BSBora
 
-[← Voltar à Semana 1](README.md) · [Mapa de Stakeholders](2-stakeholders.md) · [Premissas](premissas.md)
+[← Voltar à Semana 1](README.md) · [Mapa de Stakeholders](2-stakeholders.md)
 
-**Responsável:** Eduarda (Cientista de Dados) · **Semana:** 1 · **Situação:** Oficial
+**Responsável:** Eduarda (Cientista de Dados) · **Semana:** 1 · **Situação:** Oficial (Alinhado ao Google Docs)
 
-> **Objetivo:** Representar em arquétipos humanos reais os diferentes públicos de Brasília, cobrindo todas as categorias centrais do projeto: **crianças/famílias**, **jovens**, **adultos/casais**, **idosos** e **pessoas com deficiência (PcD)**.
+> **Objetivo:** Perfis representativos dos moradores do Distrito Federal para orientar o desenvolvimento e validar requisitos. Cobrem **10 Regiões Administrativas** e todas as categorias centrais: famílias, jovens, adultos, idosos, PcD, trabalhadores por turno e grupos de amigos.
 
 ---
 
-## 🎯 Visão Geral das Personas
+## ⚡ Tabela Rápida das 10 Personas
+
+| # | Persona | Perfil & RA | Objetivo e Dificuldade | Como o BSBora Responde |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | **Marcos** (34) | Pai solo • Ceilândia | Lazer infantil barato. Pouco tempo; infraestrutura e custos incertos. | Filtrar por faixa etária e categoria `familia`. Estimar transporte e gastos totais. |
+| **02** | **Beatriz** (22) | Estudante • Asa Norte | Feiras, saraus e oficinas. Eventos dispersos; retorno de ônibus difícil. | Reunir eventos culturais alternativos e cruzar com rotas de transporte público. |
+| **03** | **Roberto** (42) | Cadeirante • Guará | Lazer cultural com autonomia. Acessibilidade mal documentada na internet. | Mostrar apenas rampas, banheiros e vagas com confirmação oficial na fonte. |
+| **04** | **Helena** (67) | Aposentada • Taguatinga | Passeios culturais tranquilos. Dificuldade com apps complexos e caminhadas longas. | Roteiros com trajetos simples, pausas, sombras e informações claras de acesso. |
+| **05** | **Camila e Rafael** (29/31) | Casal • Águas Claras | Lazer a dois após o trabalho. Agenda apertada e preços pouco claros. | Sugerir passeios por horário livre, custo total do casal e distância viável. |
+| **06** | **Júlia** (26) | Grupo de amigos • Samambaia | Encontros em grupo no DF. Preferências diferentes e divisão de despesas. | Filtrar atividades coletivas, sugerir ponto de encontro e calcular custo por pessoa. |
+| **07** | **Paulo** (45) | Turnos alternativos • Planaltina | Busca lazer em horários atípicos (folgas durante a semana). Poucas opções próximas. | Filtrar por período livre específico, proximidade geográfica e custo total. |
+| **08** | **Ana** (38) | Mãe de adolescente • Recanto das Emas | Conciliar lazer para diferentes idades. Ingressos e deslocamento pesam no bolso. | Comparar preço por pessoa, opções gratuitas e atrativos multigeracionais. |
+| **09** | **Lúcia** (52) | Baixa visão • Sobradinho | Cultura com autonomia. Informações visuais e orientação de acesso limitadas. | Interface com textos legíveis, alto contraste e dados confirmados de acessibilidade. |
+| **10** | **Diego** (19) | Jovem aprendiz • Gama | Esportes e eventos gratuitos. Depende 100% de ônibus e tem renda muito baixa. | Priorizar passeios com custo zero e rotas diretas de transporte público. |
+
+---
+
+## 🎯 Detalhamento dos Arquétipos por Categoria
+
+### 🧒 Crianças & Família
+
+* **Marcos (34 anos) — Ceilândia (Pai Solo):**
+  * *Contexto:* Vive com seu filho Enzo (7 anos). Orçamento apertado e tempo livre restrito aos fins de semana.
+  * *Dores:* Medo de chuva estragar passeios abertos; falta de tempo para pesquisar; incerteza sobre sanitários infantis e segurança.
+  * *Solução:* Filtro `familia` com infraestrutura checada e agente de clima alertando sobre chuva.
+
+* **Ana (38 anos) — Recanto das Emas (Mãe de Adolescente):**
+  * *Contexto:* Precisa conciliar o lazer de uma filha de 14 anos e um filho de 6 anos.
+  * *Dores:* O que diverte a criança entedia a adolescente; custos de ingressos multiplicados por 3 pesam muito.
+  * *Solução:* Comparativo de custo por pessoa e indicação de parques e centros culturais híbridos.
+
+---
+
+### 🎓 Jovens & Vida Cultural
+
+* **Beatriz (22 anos) — Asa Norte (Estudante UnB / Estagiária):**
+  * *Contexto:* Depende de transporte público e busca cultura alternativa, feiras e saraus.
+  * *Dores:* Informações dispersas em redes sociais e medo de ficar sem transporte tarde da noite.
+  * *Solução:* Agrupamento de eventos temporários integrado a rotas seguras de ônibus e metrô.
+
+* **Diego (19 anos) — Gama (Jovem Aprendiz):**
+  * *Contexto:* Renda inicial de aprendiz; busca rolês esportivos, parques e encontros ao ar livre.
+  * *Dores:* Qualquer gasto acima de R$ 20 compromete a semana; distância do Gama até a área central.
+  * *Solução:* Filtro rigoroso de gratuidade e destaque para atrativos no próprio Gama ou RAs vizinhas.
+
+---
+
+### 💼 Adultos & Socialização em Grupo
+
+* **Camila (29) e Rafael (31) — Águas Claras (Casal):**
+  * *Contexto:* Vida profissional ativa; querem descompressão aos fins de semana sem estourar o orçamento doméstico.
+  * *Dores:* Monotonia de ir sempre aos mesmos locais; dificuldade de calcular despesas combinadas com antecedência.
+  * *Solução:* Distribuição mensal na agenda e controle determinístico de saldo disponível.
+
+* **Júlia (26 anos) — Samambaia (Organizadora do Grupo de Amigos):**
+  * *Contexto:* É quem sempre toma a iniciativa de juntar a turma (5 a 8 amigos).
+  * *Dores:* Dificuldade de encontrar um local que agrade quem pode gastar muito e quem está sem dinheiro.
+  * *Solução:* Filtros por custo por pessoa e indicação de atrativos com espaços abertos para piqueniques e convivência.
+
+---
+
+### ⏰ Rotinas Flexíveis & Horários Alternativos
+
+* **Paulo (45 anos) — Planaltina (Trabalhador por Turnos):**
+  * *Contexto:* Trabalha em escala (12x36 ou plantões noturnos); costuma ter folgas em terças ou quartas-feiras.
+  * *Dores:* Muitos museus e parques fecham para manutenção no início da semana; poucas opções perto de Planaltina.
+  * *Solução:* Filtro por dia da semana e período específico (manhã/tarde), evitando viagens perdidas a locais fechados.
+
+---
+
+### 👵 Idosos & Melhor Idade
+
+* **Dona Helena (67 anos) — Taguatinga (Aposentada):**
+  * *Contexto:* Gosta de passeios culturais, feiras de artesanato e caminhadas pela manhã.
+  * *Dores:* Telas com letras pequenas ou difíceis de mexer; cansaço físico em locais sem sombra e sem bancos.
+  * *Solução:* Interface com visual limpo e direto, destacando locais planos, arborizados e de fácil circulação.
+
+---
+
+### ♿ Acessibilidade & PcD (Mobilidade e Sensorial)
+
+* **Roberto (42 anos) — Guará (Cadeirante):**
+  * *Contexto:* Usuário de cadeira de rodas motorizada, ativo e apreciador de artes e gastronomia.
+  * *Dores:* Acessibilidade "no papel" que não existe na prática (degraus ocultos, banheiros trancados ou sem barra).
+  * *Solução:* Apenas dados de acessibilidade física auditados em fontes oficiais. Se não houver certeza, o sistema avisa.
+
+* **Lúcia (52 anos) — Sobradinho (Pessoa com Baixa Visão):**
+  * *Contexto:* Gosta de música, teatro e passeios ao ar livre, mas precisa de apoio de contraste visual.
+  * *Dores:* Páginas web com baixo contraste e falta de informações sonoras ou orientação tátil nos atrativos.
+  * *Solução:* Design web compatível com leitores de tela, alto contraste e sinalização de atrativos com audiodescrição.
+
+---
+
+## 🗺️ Cobertura Geográfica das 10 Personas no DF
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        ARQUÉTIPOS DE USUÁRIOS                          │
-├──────────────┬──────────────┬──────────────┬─────────────┬─────────────┤
-│   FAMÍLIA    │    JOVENS    │   ADULTOS    │   IDOSOS    │    PcD      │
-│  👶 Marcos   │  🎓 Beatriz  │ 💼 C. & R.   │ 👵 D. Helena│ ♿ Roberto   │
-│ (Ceilândia)  │ (Asa Norte)  │  (Guará/AC)  │ (Sobradinho)│   (Guará)   │
-└──────────────┴──────────────┴──────────────┴─────────────┴─────────────┘
+                        [ Planaltina (Paulo) ]
+                                 │
+                         [ Sobradinho (Lúcia) ]
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+       [ Asa Norte (Beatriz) ]        [ Guará (Roberto) ]
+                 │                               │
+       [ Águas Claras (C. & R.) ]     [ Taguatinga (Helena) ]
+                 │                               │
+       [ Ceilândia (Marcos) ]         [ Samambaia (Júlia) ]
+                 │                               │
+       [ Recanto das Emas (Ana) ]     [ Gama (Diego) ]
 ```
-
----
-
-## 🧒 Persona 1: Marcos (34 anos) — Família & Crianças
-> *"Quero que meu filho tenha fins de semana incríveis sem que isso comprometa o aluguel do mês."*
-
-* **Perfil:** Técnico de suporte e pai solo. Mora em **Ceilândia** com seu filho Enzo (7 anos).
-* **Rotina & Orçamento:** Orçamento financeiro apertado; tempo livre estritamente nos fins de semana.
-* **Objetivos:**
-  * Encontrar parques, oficinas infantis, feiras e passeios culturais gratuitos ou baratos no DF.
-  * Garantir passeios seguros, divertidos e com estrutura para crianças.
-* **Dores:**
-  * Falta de tempo para pesquisar opções adequadas.
-  * Incerteza se o local tem banheiros limpos, segurança e opções acessíveis de alimentação.
-  * Medo de chuvas repentinas estragarem passeios em áreas abertas.
-* **Como o BSBora ajuda:**
-  * Filtra opções na categoria `familia` com infraestrutura adequada.
-  * Checa a previsão do tempo via API de clima para evitar passeios abertos em dias de chuva.
-  * Calcula custos totais (transporte + ingressos) a partir de Ceilândia.
-
----
-
-## 🎓 Persona 2: Beatriz (22 anos) — Jovens & Estudantes
-> *"Quero viver a cultura de Brasília sem gastar o que não tenho e sem ficar ilhada na volta para casa."*
-
-* **Perfil:** Estudante de Comunicação na UnB e estagiária. Mora na **Asa Norte** e depende 100% de transporte público (ônibus e metrô).
-* **Rotina & Orçamento:** Orçamento muito restrito; busca descompressão e autocuidado entre as aulas e o estágio.
-* **Objetivos:**
-  * Descobrir feiras criativas, saraus, teatro independente, oficinas e eventos alternativos.
-  * Aproveitar espaços públicos com amigos sem custos elevados.
-* **Dores:**
-  * Eventos culturais alternativos ficam dispersos em múltiplos perfis de redes sociais.
-  * Medo de não ter ônibus ou metrô para voltar tarde da noite.
-  * Gastos imprevistos com transporte por aplicativo que estouram o mês.
-* **Como o BSBora ajuda:**
-  * Centraliza eventos do catálogo e plataformas integradas (Eventbrite/Setur).
-  * Cruza a localização do evento com as linhas de transporte público da Semob.
-  * Garante roteiros 100% compatíveis com um teto orçamentário estudantil.
-
----
-
-## 💼 Persona 3: Camila (29) e Rafael (31) — Adultos & Casais
-> *"Nosso objetivo é ter momentos de lazer a dois todo fim de semana, com previsibilidade financeira."*
-
-* **Perfil:** Analista de RH e Desenvolvedor Júnior. Moram em **Águas Claras**.
-* **Rotina & Orçamento:** Renda estável, mas com meta rígida de economia para comprar um imóvel.
-* **Objetivos:**
-  * Conhecer novos cafés, trilhas ecológicas, exposições no CCBB e experiências gastronômicas com bom custo-benefício.
-  * Distribuir os passeios pelos 4 fins de semana do mês com equilíbrio.
-* **Dores:**
-  * Dificuldade de controlar os gastos somados do casal ao longo das semanas.
-  * Monotonia de ir sempre aos mesmos locais por falta de planejamento prévio.
-* **Como o BSBora ajuda:**
-  * Agente financeiro calcula o gasto por pessoa e o saldo restante do teto mensal.
-  * Agente planejador distribui os eventos nos fins de semana livres marcados na agenda.
-
----
-
-## 👵 Persona 4: Dona Helena (68 anos) — Idosos & Melhor Idade
-> *"Procuro tranquilidade, passeios agradáveis durante o dia e locais onde eu possa caminhar com segurança."*
-
-* **Perfil:** Professora aposentada, moradora de **Sobradinho**. Vive com seu marido.
-* **Rotina & Orçamento:** Dias de semana e fins de semana disponíveis; prioriza conforto, segurança e socialização.
-* **Objetivos:**
-  * Fazer caminhadas matinais em parques ecológicos, visitar museus e feiras de artesanato com calma.
-  * Passeios com sombra, bancos para descanso e fácil acesso a sanitários.
-* **Dores:**
-  * Dificuldade em navegar em sistemas complexos ou com excesso de propagandas.
-  * Falta de informações claras sobre acessibilidade para quem tem mobilidade reduzida por idade.
-  * Atrativos com trânsito confuso ou estacionamento muito distante.
-* **Como o BSBora ajuda:**
-  * Interface web limpa, com cartões simples e de fácil leitura.
-  * Recomendações de horários mais tranquilos e passeios arborizados/estruturados.
-  * Detalhamento claro de distâncias e pontos de apoio no local.
-
----
-
-## ♿ Persona 5: Roberto (42 anos) — Pessoas com Deficiência (PcD)
-> *"Não aceito surpresas de acessibilidade. Preciso saber antes se o lugar me respeita como cidadão."*
-
-* **Perfil:** Analista de sistemas e usuário de cadeira de rodas motorizada. Mora no **Guará**.
-* **Rotina & Orçamento:** Ativo, sociável e financeiramente independente. Gosta de artes visuais, gastronomia e parques.
-* **Objetivos:**
-  * Explorar a vida cultural de Brasília com plena autonomia, segurança e dignidade.
-  * Confirmar de antemão a existência de rampas adequadas, piso nivelado, elevadores e banheiros adaptados.
-* **Dores:**
-  * Informações de acessibilidade na internet são genéricas, desatualizadas ou falsas ("acessível", mas com 3 degraus na porta).
-  * Chegar ao destino e ser obrigado a voltar para casa por falta de infraestrutura física.
-* **Como o BSBora ajuda:**
-  * Exibe **apenas dados de acessibilidade verificados e auditados** no catálogo.
-  * Caso o atrativo não confirme acessibilidade na fonte oficial, o BSBora avisa explicitamente: *"Condição de acessibilidade não confirmada"*.
-  * Sugere trajetos planos e locais com vagas reservadas garantidas.
-
----
-
-## 📊 Matriz Comparativa das Personas
-
-| Persona | Categoria Principal | Região (RA) | Foco Central | Principal Restrição |
-| --- | :--- | :--- | :--- | :--- |
-| **Marcos** | Família / Crianças | Ceilândia | Custo total e infraestrutura infantil | Orçamento apertado e tempo livre |
-| **Beatriz** | Jovens / Estudantes | Asa Norte | Cultura alternativa e autocuidado | Renda de estágio e transporte público |
-| **Camila & Rafael**| Adultos / Casal | Águas Claras | Variedade e planejamento mensal | Teto rígido de poupança |
-| **Dona Helena** | Idosos / Melhor Idade | Sobradinho | Conforto, natureza e tranquilidade | Mobilidade física e usabilidade simples |
-| **Roberto** | PcD / Mobilidade Red. | Guará | Autonomia cultural e acessibilidade | Barreiras arquitetônicas |
+*(Garante 100% de conformidade com a meta de evitar a concentração exclusiva no Plano Piloto).*
