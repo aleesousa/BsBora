@@ -12,7 +12,7 @@ O BSBora é um **site** que ajuda moradores do Distrito Federal a planejar os pa
 
 Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado à Big Idea **Qualidade de Vida**.
 
-> **Status:** fase de definição e planejamento. Ainda não há código implementado. Tudo o que está descrito aqui é **proposta**, sujeita à validação da equipe, dos mentores e dos usuários. O nome e o slogan também são provisórios.
+> **Status:** fase de definição e planejamento. Ainda não há código implementado. Tudo o que está descrito aqui é **proposta**, sujeita à revisão da equipe e dos mentores, com base em pesquisa documental e fontes confiáveis. O nome e o slogan também são provisórios.
 
 **Foco:** o projeto será um **sistema web** (abre no navegador do computador ou do celular). O aplicativo mobile fica apenas como **plano de backup / evolução futura**.
 
@@ -129,7 +129,7 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 - **Orquestração de sistema multiagentes:** 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando para um agente principal orquestrador.
 - **Agentes lendo dados de APIs** (mapas e rotas, previsão de clima, fontes de passeios), cada agente com sua integração.
 
-> **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). Voz está fora do escopo.
+> **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). 
 
 ---
 
@@ -147,7 +147,7 @@ O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#crono
 
 A meta inicial sugerida para o catálogo é de **30 a 50 passeios**, condicionada à disponibilidade de dados confiáveis.
 
-A interação com o assistente será exclusivamente por texto. Entrada e saída por voz estão fora do escopo do projeto.
+A interação com o assistente será por texto.
 
 ---
 
@@ -228,7 +228,7 @@ O cronograma segue o roadmap oficial do Challenge 2, com **7 semanas**. Cada sem
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Catálogo inicial no Supabase com pgvector e telas básicas. |
 | 3 | Comparação LLM x RAG | Respostas baseadas em evidências | Mesmo conjunto de perguntas para o LLM com e sem RAG. |
 | 4 | Sistema multiagentes | Primeiro sistema multiagentes | Primeira versão dos 5 agentes especializados (lazer/eventos, mobilidade, clima, financeiro, planejador) reportando ao agente principal orquestrador, com regras de negócio determinísticas. |
-| 5 | Multimodalidade | Agentes multimodais | Cada agente passa a combinar diferentes fontes de dados por APIs (catálogo, mapas e rotas, previsão do clima). Sem voz; interpretação a validar com os mentores. |
+| 5 | Multimodalidade | Agentes multimodais | Cada agente passa a combinar diferentes fontes de dados por APIs (catálogo, mapas e rotas, previsão do clima). |
 | 6 | Integração completa | Aplicação funcional | Telas, API e IA no fluxo completo do sistema web. |
 | 7 | Testes e refinamento | Relatório final + apresentação | Testes de usabilidade, avaliação das métricas e apresentação. |
 
@@ -252,14 +252,13 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 
 ## Decisões em aberto
 
-- Priorizar o perfil de usuário para entrevistas e validação.
+- Pesquisar e reunir dados confiáveis sobre o público-alvo, passeios e necessidades de lazer no DF, usando fontes documentais e bases públicas.
 - Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Papéis definidos:** Engenharia de Dados (Alexandre), Arquitetura de Software (Larissa), Ciência de Dados (Eduarda) e Operação (Isabela e Breno). Ainda falta detalhar a distribuição das atividades por módulo.
 - ~~Definir as tecnologias do frontend web.~~ **Decidido:** HTML + JavaScript simples no início, com evolução possível.
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
 - Definir perguntas e cenários de teste desde a primeira semana.
 - Definir as APIs de cada agente (mapas e rotas, clima, fontes de passeios).
-- Validar com os mentores a interpretação da multimodalidade (Semana 5) sem voz.
 
 ---
 
@@ -271,6 +270,5 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 - [Riscos e medidas de mitigação](documentos/semana-1/3-riscos.md)
 - [Métricas e avaliação planejada](documentos/semana-1/4-metricas.md)
 
-As referências a entrada e saída por voz nos PDFs fazem parte das propostas preliminares e foram descartadas do escopo atual.
 
 As instruções de instalação e execução serão adicionadas quando a estrutura do sistema web e da API estiver implementada.
