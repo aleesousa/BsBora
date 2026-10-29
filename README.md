@@ -190,6 +190,15 @@ O sistema conta com **5 agentes especializados que reportam para um agente princ
 - **Financeiro:** valida o cumprimento estrito do teto orçamentário mensal, custos por participante, reserva de imprevistos e saldo restante (regras determinísticas).
 - **Planejador:** aloca os passeios nos dias e turnos livres marcados na agenda mensal, propondo substituições viáveis.
 
+> **Estratégia de desenvolvimento (em fases):**
+> 1. **Início — foco no Agente Principal:** o desenvolvimento começa apenas pelo agente principal, com uma **base pequena de passeios (demo) com 30 passeios**, suficiente para acompanhar se ele responde de forma eficiente. A divisão da pesquisa entre os 5 integrantes será definida na Semana 2.
+> 2. **Semana 4 em diante (multiagentes) — um agente por vez:** com o agente principal funcionando, a equipe passa a desenvolver cada agente especialista individualmente (Lazer e Eventos, Mobilidade, Clima, Financeiro, Planejador) e a ampliar a base de dados.
+>
+> **Clima — decisão adiada para o início dos multiagentes (Semana 4):** há duas opções a testar na prática, e nenhuma será implementada antes disso.
+> - **Opção 1 (recomendada para testar primeiro) — Lazer + Clima:** o agente de Lazer, com duas ferramentas (busca no catálogo e API de clima), já sugere alternativa coberta quando houver previsão de chuva em passeio ao ar livre, evitando troca excessiva de mensagens com o Orquestrador. Mobilidade fica só com rotas e custos de deslocamento.
+> - **Opção 2 (contingência) — Mobilidade + Clima:** o agente de Mobilidade agrupa rotas e previsão do tempo, apenas sinalizando o risco de chuva; o Orquestrador pede outro passeio ao Lazer, que fica só com a busca vetorial. Adotar se a Opção 1 ficar pesada ou lenta.
+> - Em ambas, o ideal é manter no máximo 1 ou 2 ferramentas por agente.
+
 Somas, limites financeiros e validações de datas devem ser implementados com **regras determinísticas e testes**. A IA apoia a recuperação, a interpretação e a explicação das opções.
 
 ---

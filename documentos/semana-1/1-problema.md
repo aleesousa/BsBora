@@ -50,6 +50,7 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 | **Supabase (PostgreSQL + pgvector + login)** | Reúne banco, login e busca vetorial do RAG em um único serviço gratuito para protótipos. |
 | **LLM + RAG** | Reduz respostas inventadas, porque a IA responde a partir do catálogo verificado. A Semana 3 compara LLM com e sem RAG. |
 | **Agentes que leem dados de APIs** | Cada agente tem uma fonte de dados própria, o que facilita testar e trocar integrações. As APIs candidatas ainda serão definidas. |
+| **Início com o Agente Principal** | O desenvolvimento começa só pelo agente principal, com uma base demo de 30 passeios (divisão da pesquisa a definir na Semana 2) para avaliar a eficiência das respostas. Os agentes especialistas são desenvolvidos um a um a partir da Semana 4 (multiagentes). O Agente de Clima tem duas opções de arquitetura (Lazer + Clima ou Mobilidade + Clima), decididas nessa etapa; ver [README](../../README.md#papéis-dos-agentes-semanas-4-e-5). |
 | **Sem voz** | O protótipo foca em ler dados das APIs e responder por texto. A multimodalidade da Semana 5 é tratada como a combinação de várias fontes de dados pelos agentes (interpretação a validar com os mentores). |
 
 ## Fora do escopo
