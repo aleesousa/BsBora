@@ -61,19 +61,17 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 <td align="center" valign="top" width="20%">
 <a href="https://github.com/LarissaGiffoni"><img src="https://github.com/LarissaGiffoni.png" width="105" height="105" alt="Perfil de Larissa"></a>
 <br><strong>Larissa</strong>
-<br><sub>Papel em definição</sub>
+<br><sub>Arquiteta de Software</sub>
 <br><a href="https://github.com/LarissaGiffoni"><img src="https://img.shields.io/badge/GitHub-LarissaGiffoni-181717?logo=github&logoColor=white" alt="GitHub LarissaGiffoni"></a>
 </td>
 <td align="center" valign="top" width="20%">
 <a href="https://github.com/Br3n0G"><img src="https://github.com/Br3n0G.png" width="105" height="105" alt="Perfil de Breno"></a>
 <br><strong>Breno</strong>
-<br><sub>Papel em definição</sub>
+<br><sub>Operação</sub>
 <br><a href="https://github.com/Br3n0G"><img src="https://img.shields.io/badge/GitHub-Br3n0G-181717?logo=github&logoColor=white" alt="GitHub Br3n0G"></a>
 </td>
 </tr>
 </table>
-
-**Papel ainda sem responsável:** Arquiteto de Software. Os papéis de Larissa e Breno também estão em definição.
 
 
 ---
@@ -255,7 +253,7 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 ## Decisões em aberto
 
 - Priorizar o perfil de usuário para entrevistas e validação.
-- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Parcialmente decidido:** Engenharia de Dados (Alexandre), Ciência de Dados (Eduarda) e Operação (Isabela). Arquitetura de Software e os papéis de Larissa e Breno ainda estão em definição.
+- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Papéis definidos:** Engenharia de Dados (Alexandre), Arquitetura de Software (Larissa), Ciência de Dados (Eduarda) e Operação (Isabela e Breno). Ainda falta detalhar a distribuição das atividades por módulo.
 - ~~Definir as tecnologias do frontend web.~~ **Decidido:** HTML + JavaScript simples no início, com evolução possível.
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
