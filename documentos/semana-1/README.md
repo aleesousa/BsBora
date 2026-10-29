@@ -12,9 +12,11 @@
 | # | Entregável | Arquivo | Situação |
 | --- | --- | --- | --- |
 | 1 | Problema, pergunta norteadora, público e requisitos | [1-problema.md](1-problema.md) | Rascunho |
-| 2 | Stakeholders | [2-stakeholders.md](2-stakeholders.md) | Concluído (Oficial) |
-| 3 | Riscos e medidas de mitigação | [3-riscos.md](3-riscos.md) | Rascunho (11 riscos mapeados) |
-| 4 | Métricas e avaliação planejada | [4-metricas.md](4-metricas.md) | Rascunho (metas a validar) |
+| 2 | Mapa de Stakeholders (com Pipeline da equipe) | [2-stakeholders.md](2-stakeholders.md) | Concluído (Oficial) |
+| 3 | Personas do Projeto (Crianças, Jovens, Adultos, Idosos, PcD) | [personas.md](personas.md) | Concluído (Oficial) |
+| 4 | Premissas do Projeto (por categoria e operacionais) | [premissas.md](premissas.md) | Concluído (Oficial) |
+| 5 | Riscos e medidas de mitigação | [3-riscos.md](3-riscos.md) | Rascunho (11 riscos mapeados) |
+| 6 | Métricas e avaliação planejada | [4-metricas.md](4-metricas.md) | Rascunho (metas a validar) |
 
 ## Checklist das restrições do Challenge
 
