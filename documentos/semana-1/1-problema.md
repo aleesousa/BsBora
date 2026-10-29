@@ -6,9 +6,18 @@
 
 Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e controlar gastos pode dificultar o aproveitamento dos dias livres. Hoje essas informações ficam espalhadas (sites de turismo, redes sociais, aplicativos de transporte, planilhas pessoais), e cada pessoa precisa juntá-las sozinha.
 
-**Pergunta norteadora:** como utilizar inteligência artificial para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer personalizados, respeitando sua disponibilidade de tempo e suas limitações financeiras, de modo a favorecer o bem-estar e a qualidade de vida?
+### Perguntas do Projeto (Challenge)
 
-**Ligação com a Big Idea (Qualidade de Vida):** o BSBora apoia a **tomada de decisão** sobre o tempo livre: o que fazer, quando e quanto gastar.
+* **Essential Question (Pergunta Essencial):**
+  > *"Como podemos utilizar inteligência artificial para ajudar moradores de todo o Distrito Federal a planejar momentos de lazer e autocuidado personalizados, respeitando sua disponibilidade de tempo e suas limitações financeiras, de modo a favorecer o bem-estar e a qualidade de vida?"*
+
+* **Guiding Questions (Perguntas Norteadoras):**
+  1. **Acesso & Descentralização:** Como a falta de tempo, orçamento restrito e a distância física do centro de Brasília influenciam a escolha de atividades em diferentes Regiões Administrativas?
+  2. **Consciência Financeira:** Como incentivar o lazer e o autocuidado sem estimular o endividamento, oferecendo clareza antecipada sobre custos de ingressos, alimentação e transporte?
+  3. **Dados Mínimos para IA:** Quais parâmetros essenciais são necessários para gerar recomendações precisas e personalizadas (RA de origem, teto orçamentário, datas disponíveis, perfil de participantes, transporte preferido e presença de crianças)?
+  4. **Viabilidade Climática & Operacional:** Como integrar previsões meteorológicas e horários reais para evitar viagens perdidas e passeios ao ar livre em dias de chuva?
+
+**Ligação com a Big Idea (Qualidade de Vida):** o BSBora apoia a **tomada de decisão consciente** sobre o tempo livre: o que fazer, quando, como chegar e quanto gastar com previsibilidade.
 
 ## Público
 
