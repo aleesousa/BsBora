@@ -1,2 +1,6 @@
 # Arquivos do sistema macOS
 .DS_Store
+
+# Memória local do assistente
+GEMINI.md
+gemini.md

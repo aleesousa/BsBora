@@ -23,7 +23,6 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 - [Equipe](#equipe)
 - [Glossário para iniciantes](#glossário-para-iniciantes)
 - [Problema e objetivo](#problema-e-objetivo)
-- [Plano do protótipo](#plano-do-protótipo)
 - [Funcionalidades planejadas](#funcionalidades-planejadas)
 - [Fluxo de uso](#fluxo-de-uso)
 - [Arquitetura e tecnologias propostas](#arquitetura-e-tecnologias-propostas)
@@ -101,35 +100,6 @@ Descobrir passeios, conciliar preferências e horários, estimar deslocamentos e
 **Público:** moradores do Distrito Federal que buscam passeios de fim de semana, incluindo pessoas sozinhas, casais, famílias e grupos de amigos.
 
 **Cobertura:** **todo o Distrito Federal**, abrangendo todas as suas Regiões Administrativas.
-
----
-
-## Plano do protótipo
-
-O projeto segue o roadmap de **7 semanas** do Challenge (ver [cronograma](#cronograma-roadmap-do-challenge)). Dentro dele, a construção vai do **mais fácil para o mais difícil**. A ideia é ter algo funcionando cedo e ir melhorando. Esta divisão é uma proposta e deve ser validada pela equipe.
-
-### 🟢 Fácil: base do protótipo (entra com certeza)
-
-- Telas em **HTML + JavaScript simples**: perfil e preferências, lista de passeios em cartões e resumo do plano.
-- **Catálogo inicial** de passeios do DF (começando pequeno e crescendo até a meta de 30 a 50).
-- **Filtro por categoria** (ex.: cultura, natureza, gastronomia) e por região.
-- No catálogo: a categoria **família / adequado para crianças** e a etiqueta **ao ar livre / coberto** (para lembrar o usuário de conferir o clima).
-- **Cálculo do orçamento** com regras determinísticas: total planejado e saldo restante.
-
-### 🟡 Médio: deixa o protótipo completo (meta da entrega)
-
-- **Login e banco de dados com Supabase:** o usuário entra, e suas escolhas ficam salvas e passam a filtrar as categorias sugeridas.
-- **Agenda simples** para marcar dias e períodos livres.
-- **Estimativa de transporte** por fórmula simples (ex.: carro = distância × consumo × combustível; ônibus = tarifa), com aviso de "estimativa".
-- **API em Python + FastAPI** ligando as telas ao banco de dados.
-
-### 🔴 Difícil: se der tempo (ou versão mínima)
-
-- **Assistente de IA com RAG**, explicando as sugestões com base no catálogo.
-- **Orquestração de sistema multiagentes:** 5 agentes especializados (lazer/eventos, mobilidade, clima via API, financeiro, planejador) reportando para um agente principal orquestrador.
-- **Agentes lendo dados de APIs** (mapas e rotas, previsão de clima, fontes de passeios), cada agente com sua integração.
-
-> **Fica para depois:** aplicativo mobile e as demais [evoluções futuras](#evoluções-futuras). 
 
 ---
 
