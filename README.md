@@ -41,37 +41,39 @@ Projeto da **Residência em Inteligência Artificial — Challenge 2**, alinhado
 <table width="100%">
 <tr>
 <td align="center" valign="top" width="20%">
-<a href="https://github.com/dudsstar16"><img src="https://github.com/dudsstar16.png" width="120" height="120" alt="Foto de Eduarda"></a>
+<a href="https://github.com/aleesousa"><img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="105" height="105" alt="Perfil de Alexandre Sousa"></a>
+<br><strong>Alexandre Sousa</strong>
+<br><sub>Engenheiro de Dados</sub>
+<br><a href="https://github.com/aleesousa"><img src="https://img.shields.io/badge/GitHub-aleesousa-181717?logo=github&logoColor=white" alt="GitHub aleesousa"></a>
+</td>
+<td align="center" valign="top" width="20%">
+<a href="https://github.com/dudsstar16"><img src="https://github.com/dudsstar16.png" width="105" height="105" alt="Perfil de Eduarda"></a>
 <br><strong>Eduarda</strong>
 <br><sub>Cientista de Dados</sub>
 <br><a href="https://github.com/dudsstar16"><img src="https://img.shields.io/badge/GitHub-dudsstar16-181717?logo=github&logoColor=white" alt="GitHub dudsstar16"></a>
 </td>
 <td align="center" valign="top" width="20%">
-<a href="https://github.com/Br3n0G"><img src="https://github.com/Br3n0G.png" width="120" height="120" alt="Foto de Breno"></a>
-<br><strong>Breno</strong>
-<br><sub>MLOps</sub>
-<br><a href="https://github.com/Br3n0G"><img src="https://img.shields.io/badge/GitHub-Br3n0G-181717?logo=github&logoColor=white" alt="GitHub Br3n0G"></a>
+<a href="https://github.com/IsabelaA99"><img src="https://github.com/IsabelaA99.png" width="105" height="105" alt="Perfil de Isabela"></a>
+<br><strong>Isabela</strong>
+<br><sub>Operação</sub>
+<br><a href="https://github.com/IsabelaA99"><img src="https://img.shields.io/badge/GitHub-IsabelaA99-181717?logo=github&logoColor=white" alt="GitHub IsabelaA99"></a>
 </td>
 <td align="center" valign="top" width="20%">
-<a href="https://github.com/LarissaGiffoni"><img src="https://github.com/LarissaGiffoni.png" width="120" height="120" alt="Foto de Larissa"></a>
+<a href="https://github.com/LarissaGiffoni"><img src="https://github.com/LarissaGiffoni.png" width="105" height="105" alt="Perfil de Larissa"></a>
 <br><strong>Larissa</strong>
-<br><sub>Engenheira de Software</sub>
+<br><sub>Papel em definição</sub>
 <br><a href="https://github.com/LarissaGiffoni"><img src="https://img.shields.io/badge/GitHub-LarissaGiffoni-181717?logo=github&logoColor=white" alt="GitHub LarissaGiffoni"></a>
 </td>
 <td align="center" valign="top" width="20%">
-<a href="https://github.com/aleesousa"><img src="https://avatars.githubusercontent.com/u/173936404?v=4" width="120" height="120" alt="Foto de Alexandre Sousa"></a>
-<br><strong>Alexandre Sousa</strong>
-<br><sub>Engenheiro de IA</sub>
-<br><a href="https://github.com/aleesousa"><img src="https://img.shields.io/badge/GitHub-aleesousa-181717?logo=github&logoColor=white" alt="GitHub aleesousa"></a>
-</td>
-<td align="center" valign="top" width="20%">
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="120" height="120" alt="Perfil pendente de Isabel">
-<br><strong>Isabel</strong>
-<br><sub>Função a definir</sub>
-<br><sub>GitHub pendente</sub>
+<a href="https://github.com/Br3n0G"><img src="https://github.com/Br3n0G.png" width="105" height="105" alt="Perfil de Breno"></a>
+<br><strong>Breno</strong>
+<br><sub>Papel em definição</sub>
+<br><a href="https://github.com/Br3n0G"><img src="https://img.shields.io/badge/GitHub-Br3n0G-181717?logo=github&logoColor=white" alt="GitHub Br3n0G"></a>
 </td>
 </tr>
 </table>
+
+**Papel ainda sem responsável:** Arquiteto de Software. Os papéis de Larissa e Breno também estão em definição.
 
 
 ---
@@ -253,7 +255,7 @@ Essas evoluções dependem de tempo, disponibilidade de dados e consentimento qu
 ## Decisões em aberto
 
 - Priorizar o perfil de usuário para entrevistas e validação.
-- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Parcialmente decidido:** papéis definidos na seção [Equipe](#equipe); falta definir o papel da Isabel.
+- Distribuir responsabilidades de dados/RAG, agentes, backend, frontend e avaliação. **Parcialmente decidido:** Engenharia de Dados (Alexandre), Ciência de Dados (Eduarda) e Operação (Isabela). Arquitetura de Software e os papéis de Larissa e Breno ainda estão em definição.
 - ~~Definir as tecnologias do frontend web.~~ **Decidido:** HTML + JavaScript simples no início, com evolução possível.
 - Validar o tamanho do catálogo e as fontes de estimativa de cada transporte.
 - Verificar licenças, custos e cotas dos serviços de mapas e IA.
